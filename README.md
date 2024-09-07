@@ -1,4 +1,4 @@
-# 「9月6日」最高速度18.7M/S，2024年ClashX Node每天更新免费机场订阅节点链接  更新时间 2024-09-06 10:24:48
+# 「9月7日」最高速度22.4M/S，2024年ClashX Node每天更新免费机场订阅节点链接  更新时间 2024-09-07 09:54:06
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://clashxnode.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,19 +9,19 @@
 
 ### Clash订阅链接
 
-- https://clashxnode.github.io/uploads/2024/09/0-20240906.yaml
-- https://clashxnode.github.io/uploads/2024/09/1-20240906.yaml
-- https://clashxnode.github.io/uploads/2024/09/2-20240906.yaml
-- https://clashxnode.github.io/uploads/2024/09/3-20240906.yaml
-- https://clashxnode.github.io/uploads/2024/09/4-20240906.yml
+- https://clashxnode.github.io/uploads/2024/09/0-20240907.yaml
+- https://clashxnode.github.io/uploads/2024/09/1-20240907.yaml
+- https://clashxnode.github.io/uploads/2024/09/2-20240907.yaml
+- https://clashxnode.github.io/uploads/2024/09/3-20240907.yaml
+- https://clashxnode.github.io/uploads/2024/09/4-20240907.yml
 
 ### V2ray订阅链接
 
-- https://clashxnode.github.io/uploads/2024/09/0-20240906.txt
-- https://clashxnode.github.io/uploads/2024/09/1-20240906.txt
-- https://clashxnode.github.io/uploads/2024/09/2-20240906.txt
-- https://clashxnode.github.io/uploads/2024/09/3-20240906.txt
-- https://clashxnode.github.io/uploads/2024/09/4-20240906.txt
+- https://clashxnode.github.io/uploads/2024/09/0-20240907.txt
+- https://clashxnode.github.io/uploads/2024/09/1-20240907.txt
+- https://clashxnode.github.io/uploads/2024/09/2-20240907.txt
+- https://clashxnode.github.io/uploads/2024/09/3-20240907.txt
+- https://clashxnode.github.io/uploads/2024/09/4-20240907.txt
 
 ## 更多clash节点订阅 ：
 
