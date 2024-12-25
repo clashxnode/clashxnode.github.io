@@ -2,11 +2,11 @@
 <html class="no-js" lang="zh-CN">
 
 <head>
-        <link rel="canonical" href="https://clashxnode.github.io/news/article-30185.htm" />
+        <link rel="canonical" href="https://clashxnode.github.io/news/article-30658.htm" />
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>总结vue项目引入Vant遇到的坑</title>
-        <meta name="description" content="首先贴上vant官网教程https://youzan.github.io/vant/#/zh-CN/quickstart 下面是我的代码以及问题，采用的是官网中第一种推荐使用的按需引入组件方法 1、c" />
+    <title>encodeURI()函数和encodeURIComponent()函数</title>
+        <meta name="description" content="encodeURI()和encodeURIComponent()都是Javascript中对URL编码的函数。 但是区别在于： encodeURI()着眼于对整个URL进行编码，特殊含义的符号"; /" />
         <link rel="icon" href="/assets/website/img/clashxnode/favicon.ico" type="image/x-icon"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSS here -->
@@ -136,7 +136,7 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="breadcrumb-content">
-                                <h1 class="title">总结vue项目引入Vant遇到的坑</h1>
+                                <h1 class="title">encodeURI()函数和encodeURIComponent()函数</h1>
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="/">首页</a></li>
@@ -157,10 +157,10 @@
                 <div class="row">
                     <div class="col-md-9">
                                         <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
-                  				  				  				<div id="content_views" class="htmledit_views"> <p>首先贴上vant官网教程<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://youzan.github.io/vant/#/zh-CN/quickstart"  rel="nofollow">https://youzan.github.io/vant/#/zh-CN/quickstart</a></p> <p>下面是我的代码以及问题，采用的是官网中第一种推荐使用的按需引入组件方法</p> <p>1、cmd 进入到工程目录下 执行npm i vant -S</p> <p><img fetchpriority="high" decoding="async" alt="" height="331" src="http://img.555519.xyz/uploads3/20220609/2e3a4b11074c3340d558a99637cbef37.jpg"></p> <p>2、安装插件<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/ant-design/babel-plugin-import"  rel="nofollow">babel-plugin-import</a>&nbsp;是一款 babel 插件，它会在编译过程中将 import 的写法自动转换为按需引入的方式</p> <p>执行npm&nbsp;i&nbsp;babel-plugin-import&nbsp;-D</p> <p><img decoding="async" alt="" height="293" src="http://img.555519.xyz/uploads3/20220609/648a126e7f9fc382722342b7d5491898.jpg"></p> <p>&nbsp;3、在.babelrc中配置</p> <p><img decoding="async" alt="" height="479" src="http://img.555519.xyz/uploads3/20220609/70e08a7d28d116ac7b7c5592e3cfad30.jpg"></p> <p>贴出代码，可直接复制</p> <pre><code class="language-javascript">{   "presets": [     ["env", {       "modules": false,       "targets": {         "browsers": ["&gt; 1%", "last 2 versions", "not ie &lt;= 8"]       }     }],     "stage-2"   ],   "plugins": ["transform-vue-jsx", "transform-runtime",["import", {     "libraryName": "vant",     "libraryDirectory": "es",     "style": true   }]   ],   "env": {     "test": {       "presets": ["env","stage-2"],       "plugins": ["transform-vue-jsx", "transform-es2015-modules-commonjs", "dynamic-import-node"]     }   } }</code></pre> <p>&nbsp;5、引入组件，这里以button组件为例</p> <p>在main.js文件中添加</p> <pre><code class="language-javascript">import {Button} from 'vant' Vue.use(Button)</code></pre> <p>.vue文件中</p> <pre><code class="language-html">&lt;van-button type="default"&gt;默认&lt;/van-button&gt; &lt;van-button type="primary"&gt;主要&lt;/van-button&gt; &lt;van-button type="info"&gt;信息&lt;/van-button&gt;</code></pre> <p>&nbsp;运行项目 npm run dev 即可看到效果</p> <p><img loading="lazy" decoding="async" alt="" height="825" src="http://img.555519.xyz/uploads3/20220609/d831d63a3c72d1139fc75ecf10db005b.jpg"></p> <p>这样的引入方法可能使代码量增多，毕竟用到的插件都需要在mainjs里引入一遍，但是可以减少代码包体积。想要代码更简洁可以一次性导入所有组件，在main.js中直接引入</p> <pre><code class="language-javascript">import Vant from 'vant'; import 'vant/lib/index.css';  Vue.use(Vant);</code></pre> <p>但注意在安装过第2步中的插件后，这样写会报错Vant is not defined</p> <p><img loading="lazy" decoding="async" alt="" height="176" src="http://img.555519.xyz/uploads3/20220609/a841c89e9b85e2892a7a4ab29397b7a2.jpg"></p> <p>需要卸载插件&nbsp; npm uninstall babel-plugin-import -S</p> <p>下面是在网上查教程误打误撞试出来的一种引入方法，就是在各自组件上引用各自需要的组件，不过细想没有太大的好处，反而增加了代码量还不便于维护，估计这也是官网没有提及的原因吧，贴出来也算是自己没有白费时间</p> <pre><code>&lt;template&gt;   &lt;div&gt;     &lt;van-button type="default"&gt;默认&lt;/van-button&gt;     &lt;van-button type="primary"&gt;主要&lt;/van-button&gt;     &lt;van-button type="info"&gt;信息&lt;/van-button&gt;     &lt;van-button type="warning"&gt;警告&lt;/van-button&gt;     &lt;van-button type="danger"&gt;危险&lt;/van-button&gt;   &lt;/div&gt; &lt;/template&gt;  &lt;script&gt; import {Button} from 'vant' export default {   name: 'VantComponent',   components: {     [Button.name]: Button   } } &lt;/script&gt;  &lt;style scoped&gt; &lt;/style&gt;</code></pre> <p>注意两处</p> <p><img loading="lazy" decoding="async" alt="" height="294" src="http://img.555519.xyz/uploads3/20220609/d5eae5ecb0a370ea8eb532ab9ce494c7.jpg"></p> <p>在实验过程中遇到了这样一个问题</p> <p><img loading="lazy" decoding="async" alt="" height="135" src="http://img.555519.xyz/uploads3/20220609/b5504db6fe4f6b38c7b07db569853f6d.jpg"></p> <p>一开始以为是引用方法有问题还费了好长时间，在仔细查看代码的时候发现是上图中components&nbsp;写成了comments，在这也给自己提个醒，遇到问题了在思考更深层次的原因之前要先好好检查一下代码的拼写。</p> </div> 			                <div class="clearfix"></div>
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p>encodeURI()和encodeURIComponent()都是Javascript中对URL编码的函数。<br /> 但是区别在于：<br /> encodeURI()着眼于对整个URL进行编码，特殊含义的符号"; / ? : @ &amp; = + $ , #“不进行编码<br /> encodeURIComponent()对URL的组成部分进行个别编码，所以”; / ? : @ &amp; = + $ , #"在这里是可以进行编码</p> <p>测试代码</p> <pre><code>&lt;html&gt; &lt;body&gt;  &lt;script type="text/javascript"&gt;  document.write(encodeURI("http://www.w3school.com.cn")+ "&lt;br /&gt;") document.write(encodeURI("http://www.w3school.com.cn/My first/")+ "&lt;br /&gt;") document.write(encodeURI(",/?:@&amp;=+$#")+ "&lt;br /&gt;")  document.write(encodeURIComponent("http://www.w3school.com.cn")+ "&lt;br /&gt;") document.write(encodeURIComponent("http://www.w3school.com.cn/My first/")+ "&lt;br /&gt;") document.write(encodeURIComponent(",/?:@&amp;=+$#")+ "&lt;br /&gt;") &lt;/script&gt;  &lt;/body&gt; &lt;/html&gt;</code></pre> <p>编码结果</p> <pre><code>//使用encodeURI  http://www.w3school.com.cn http://www.w3school.com.cn/My%20first/ ,/?:@&amp;=+$#  //使用encodeURIComponent  http%3A%2F%2Fwww.w3school.com.cn http%3A%2F%2Fwww.w3school.com.cn%2FMy%20first%2F %2C%2F%3F%3A%40%26%3D%2B%24%23</code></pre> <p>所以我一般进行设置时候，会在http路径采用encodeURI进行编码，但是在路径中携带的参数采用encodeURIComponent进行编码</p> </div> 			                <div class="clearfix"></div>
                 <div class="col-md-12 mt-5">
-                                        <p>上一个：<a href="/news/article-30184.htm">SpringBoot实现数据导出</a></p>
-                                        <p>下一个：<a href="/news/article-30658.htm">encodeURI()函数和encodeURIComponent()函数</a></p>
+                                        <p>上一个：<a href="/news/article-30185.htm">总结vue项目引入Vant遇到的坑</a></p>
+                                        <p>下一个：<a href="/news/article-30659.htm">私人出售狗违法吗怎么处理（私人出售狗恶霸）</a></p>
                                     </div>
                                     </div>
                     <div class="col-md-3">
@@ -170,16 +170,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
-                        <li class="py-2"><a href="/free-nodes/2024-10-2-free-clash.htm" title="「10月2日」最高速度19.2M/S，2024年ClashX Node每天更新免费机场订阅节点链接">「10月2日」最高速度19.2M/S，2024年ClashX Node每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-6-free-clash.htm" title="「9月6日」最高速度19.3M/S，2024年ClashX Node每天更新免费机场订阅节点链接">「9月6日」最高速度19.3M/S，2024年ClashX Node每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/news/article-27373.htm" title="一片片枫叶 一片片枫叶从树上落下来像什么">一片片枫叶 一片片枫叶从树上落下来像什么</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-15-free-high-speed-nodes.htm" title="「9月15日」最高速度22.4M/S，2024年ClashX Node每天更新免费机场订阅节点链接">「9月15日」最高速度22.4M/S，2024年ClashX Node每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/news/article-26449.htm" title="动物疫苗质量检验项目 动物疫苗质量检验项目包括">动物疫苗质量检验项目 动物疫苗质量检验项目包括</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-24-free-clash.htm" title="「12月24日」最高速度22.6M/S，2024年ClashX Node每天更新免费机场节点链接地址">「12月24日」最高速度22.6M/S，2024年ClashX Node每天更新免费机场节点链接地址</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-16-node-share-links.htm" title="「10月16日」最高速度20.8M/S，2024年ClashX Node每天更新免费机场订阅节点链接">「10月16日」最高速度20.8M/S，2024年ClashX Node每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-30-free-high-speed-nodes.htm" title="「11月30日」最高速度18.5M/S，2024年ClashX Node每天更新免费机场订阅节点链接">「11月30日」最高速度18.5M/S，2024年ClashX Node每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/news/article-24590.htm" title="如何从JavaScript对象中删除属性">如何从JavaScript对象中删除属性</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-5-free-subscribe-node.htm" title="「11月5日」最高速度21.3M/S，2024年ClashX Node每天更新免费机场订阅节点链接">「11月5日」最高速度21.3M/S，2024年ClashX Node每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-14-free-node-subscribe.htm" title="「12月14日」最高速度21M/S，2024年ClashX Node每天更新免费机场订阅节点链接">「12月14日」最高速度21M/S，2024年ClashX Node每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-10-free-clash.htm" title="「11月10日」最高速度19.7M/S，2024年ClashX Node每天更新免费机场订阅节点链接">「11月10日」最高速度19.7M/S，2024年ClashX Node每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-17-free-node-subscribe-links.htm" title="「10月17日」最高速度18.2M/S，2024年ClashX Node每天更新免费机场订阅节点链接">「10月17日」最高速度18.2M/S，2024年ClashX Node每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/news/article-29712.htm" title="宠物打完疫苗能洗澡吗（宠物刚打完疫苗能长途运输吗）">宠物打完疫苗能洗澡吗（宠物刚打完疫苗能长途运输吗）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-12-clash-meta-windows.htm" title="「11月12日」最高速度21.6M/S，2024年ClashX Node每天更新免费机场订阅节点链接">「11月12日」最高速度21.6M/S，2024年ClashX Node每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/news/article-27372.htm" title="动物疫苗去哪里买便宜又好（动物疫苗证去哪里办怎么办）">动物疫苗去哪里买便宜又好（动物疫苗证去哪里办怎么办）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-16-free-subscribe-node.htm" title="「11月16日」最高速度19.8M/S，2024年ClashX Node每天更新免费机场订阅节点链接">「11月16日」最高速度19.8M/S，2024年ClashX Node每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-29-free-clash-stash.htm" title="「9月29日」最高速度20.3M/S，2024年ClashX Node每天更新免费机场订阅节点链接">「9月29日」最高速度20.3M/S，2024年ClashX Node每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-23-node-share-links.htm" title="「9月23日」最高速度20.1M/S，2024年ClashX Node每天更新免费机场订阅节点链接">「9月23日」最高速度20.1M/S，2024年ClashX Node每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-9-30-free-clash-stash.htm" title="「9月30日」最高速度23M/S，2024年ClashX Node每天更新免费机场订阅节点链接">「9月30日」最高速度23M/S，2024年ClashX Node每天更新免费机场订阅节点链接</a></li>
                     </ul>
     </div>
 </div>
