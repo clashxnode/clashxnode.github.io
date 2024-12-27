@@ -2,11 +2,12 @@
 <html class="no-js" lang="zh-CN">
 
 <head>
-        <link rel="canonical" href="https://clashxnode.github.io/news/article-30185.htm" />
+        <link rel="canonical" href="https://clashxnode.github.io" />
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>总结vue项目引入Vant遇到的坑</title>
-        <meta name="description" content="首先贴上vant官网教程https://youzan.github.io/vant/#/zh-CN/quickstart 下面是我的代码以及问题，采用的是官网中第一种推荐使用的按需引入组件方法 1、c" />
+    <title>2024-12归档 - 第8页 - ClashX Node节点订阅官网</title>
+        <meta name="keywords" content="2024-12归档ClashX Node节点订阅官网" />
+        <meta name="description" content="2024-12归档，当前是第8页" />
         <link rel="icon" href="/assets/website/img/clashxnode/favicon.ico" type="image/x-icon"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- CSS here -->
@@ -35,7 +36,7 @@
      crossorigin="anonymous"></script>
 </head>
 
-<body data-page="detail">
+<body data-page="category">
         <!-- preloader -->
     <div id="preloader">
         <div id="loading-center">
@@ -136,12 +137,11 @@
                     <div class="row">
                         <div class="col-12">
                             <div class="breadcrumb-content">
-                                <h1 class="title">总结vue项目引入Vant遇到的坑</h1>
+                                <h1 class="title">2024-12 归档</h1>
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb">
                                         <li class="breadcrumb-item"><a href="/">首页</a></li>
-                                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
-                                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                                        <li class="breadcrumb-item active" aria-current="page">2024-12 归档</li>
                                     </ol>
                                 </nav>
                             </div>
@@ -151,18 +151,30 @@
             </div>
         </section>
         <!-- breadcrumb-area-end -->
-        <!-- customer-feedback -->
+                <!-- customer-feedback -->
         <section class="customer-feedback-area">
             <div class="container">
                 <div class="row">
                     <div class="col-md-9">
-                                        <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
-                  				  				  				<div id="content_views" class="htmledit_views"> <p>首先贴上vant官网教程<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://youzan.github.io/vant/#/zh-CN/quickstart"  rel="nofollow">https://youzan.github.io/vant/#/zh-CN/quickstart</a></p> <p>下面是我的代码以及问题，采用的是官网中第一种推荐使用的按需引入组件方法</p> <p>1、cmd 进入到工程目录下 执行npm i vant -S</p> <p><img fetchpriority="high" decoding="async" alt="" height="331" src="http://img.555519.xyz/uploads3/20220609/2e3a4b11074c3340d558a99637cbef37.jpg"></p> <p>2、安装插件<a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://github.com/ant-design/babel-plugin-import"  rel="nofollow">babel-plugin-import</a>&nbsp;是一款 babel 插件，它会在编译过程中将 import 的写法自动转换为按需引入的方式</p> <p>执行npm&nbsp;i&nbsp;babel-plugin-import&nbsp;-D</p> <p><img decoding="async" alt="" height="293" src="http://img.555519.xyz/uploads3/20220609/648a126e7f9fc382722342b7d5491898.jpg"></p> <p>&nbsp;3、在.babelrc中配置</p> <p><img decoding="async" alt="" height="479" src="http://img.555519.xyz/uploads3/20220609/70e08a7d28d116ac7b7c5592e3cfad30.jpg"></p> <p>贴出代码，可直接复制</p> <pre><code class="language-javascript">{   "presets": [     ["env", {       "modules": false,       "targets": {         "browsers": ["&gt; 1%", "last 2 versions", "not ie &lt;= 8"]       }     }],     "stage-2"   ],   "plugins": ["transform-vue-jsx", "transform-runtime",["import", {     "libraryName": "vant",     "libraryDirectory": "es",     "style": true   }]   ],   "env": {     "test": {       "presets": ["env","stage-2"],       "plugins": ["transform-vue-jsx", "transform-es2015-modules-commonjs", "dynamic-import-node"]     }   } }</code></pre> <p>&nbsp;5、引入组件，这里以button组件为例</p> <p>在main.js文件中添加</p> <pre><code class="language-javascript">import {Button} from 'vant' Vue.use(Button)</code></pre> <p>.vue文件中</p> <pre><code class="language-html">&lt;van-button type="default"&gt;默认&lt;/van-button&gt; &lt;van-button type="primary"&gt;主要&lt;/van-button&gt; &lt;van-button type="info"&gt;信息&lt;/van-button&gt;</code></pre> <p>&nbsp;运行项目 npm run dev 即可看到效果</p> <p><img loading="lazy" decoding="async" alt="" height="825" src="http://img.555519.xyz/uploads3/20220609/d831d63a3c72d1139fc75ecf10db005b.jpg"></p> <p>这样的引入方法可能使代码量增多，毕竟用到的插件都需要在mainjs里引入一遍，但是可以减少代码包体积。想要代码更简洁可以一次性导入所有组件，在main.js中直接引入</p> <pre><code class="language-javascript">import Vant from 'vant'; import 'vant/lib/index.css';  Vue.use(Vant);</code></pre> <p>但注意在安装过第2步中的插件后，这样写会报错Vant is not defined</p> <p><img loading="lazy" decoding="async" alt="" height="176" src="http://img.555519.xyz/uploads3/20220609/a841c89e9b85e2892a7a4ab29397b7a2.jpg"></p> <p>需要卸载插件&nbsp; npm uninstall babel-plugin-import -S</p> <p>下面是在网上查教程误打误撞试出来的一种引入方法，就是在各自组件上引用各自需要的组件，不过细想没有太大的好处，反而增加了代码量还不便于维护，估计这也是官网没有提及的原因吧，贴出来也算是自己没有白费时间</p> <pre><code>&lt;template&gt;   &lt;div&gt;     &lt;van-button type="default"&gt;默认&lt;/van-button&gt;     &lt;van-button type="primary"&gt;主要&lt;/van-button&gt;     &lt;van-button type="info"&gt;信息&lt;/van-button&gt;     &lt;van-button type="warning"&gt;警告&lt;/van-button&gt;     &lt;van-button type="danger"&gt;危险&lt;/van-button&gt;   &lt;/div&gt; &lt;/template&gt;  &lt;script&gt; import {Button} from 'vant' export default {   name: 'VantComponent',   components: {     [Button.name]: Button   } } &lt;/script&gt;  &lt;style scoped&gt; &lt;/style&gt;</code></pre> <p>注意两处</p> <p><img loading="lazy" decoding="async" alt="" height="294" src="http://img.555519.xyz/uploads3/20220609/d5eae5ecb0a370ea8eb532ab9ce494c7.jpg"></p> <p>在实验过程中遇到了这样一个问题</p> <p><img loading="lazy" decoding="async" alt="" height="135" src="http://img.555519.xyz/uploads3/20220609/b5504db6fe4f6b38c7b07db569853f6d.jpg"></p> <p>一开始以为是引用方法有问题还费了好长时间，在仔细查看代码的时候发现是上图中components&nbsp;写成了comments，在这也给自己提个醒，遇到问题了在思考更深层次的原因之前要先好好检查一下代码的拼写。</p> </div> 			                <div class="clearfix"></div>
-                <div class="col-md-12 mt-5">
-                                        <p>上一个：<a href="/news/article-30184.htm">SpringBoot实现数据导出</a></p>
-                                        <p>下一个：<a href="/news/article-30658.htm">encodeURI()函数和encodeURIComponent()函数</a></p>
-                                    </div>
-                                    </div>
+                        <div class="xcblog-blog-list">
+                                                        <div class="row item xcblog-blog-item" data-date="2024-12-01">
+                                <div class="col-md-3">
+                                    <a href="/free-nodes/2024-12-1-free-node-subscribe.htm" class="xcblog-blog-url">
+                                        <div class="online-support-img">
+                                            <img src="/uploads/20240904/5a5903fbed67198da2581e282434d5f0.webp" alt="「12月1日」最高速度19.8M/S，2024年ClashX Node每天更新免费机场订阅节点链接">
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-md-9">
+                                    <a href="/free-nodes/2024-12-1-free-node-subscribe.htm" class="xcblog-blog-url">
+                                        <h3 class="xcblog-blog-title">「12月1日」最高速度19.8M/S，2024年ClashX Node每天更新免费机场订阅节点链接</h3>
+                                    </a>
+                                    <p>这一次的节点更新覆盖了美国、欧洲、韩国、加拿大、新加坡、日本、香港等地区,最高速度可达19.8 M/S。只需复制下方的Clash/v2ray订阅链接,在客户端添加后即可正常使用。</p>
+                                </div>
+                            </div>
+                            
+                            <ul class="pagination"><li><a href="/date/2024-12/page-8.htm">&laquo;</a></li> <li><a href="/date/2024-12/">1</a></li><li><a href="/date/2024-12/page-2.htm">2</a></li><li><a href="/date/2024-12/page-3.htm">3</a></li><li><a href="/date/2024-12/page-4.htm">4</a></li><li><a href="/date/2024-12/page-5.htm">5</a></li><li><a href="/date/2024-12/page-6.htm">6</a></li><li><a href="/date/2024-12/page-7.htm">7</a></li><li><a href="/date/2024-12/page-8.htm">8</a></li><li class="active"><span>9</span></li> <li class="disabled"><span>&raquo;</span></li></ul>                        </div>
+                    </div>
                     <div class="col-md-3">
                         <div class="panel panel-default">
     <div class="panel-heading">
@@ -170,16 +182,16 @@
     </div>
     <div class="panel-body">
         <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-9-16-clash-node-github.htm" title="「9月16日」最高速度20.9M/S，2024年ClashX Node每天更新免费机场订阅节点链接">「9月16日」最高速度20.9M/S，2024年ClashX Node每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/news/article-27373.htm" title="一片片枫叶 一片片枫叶从树上落下来像什么">一片片枫叶 一片片枫叶从树上落下来像什么</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-26-node-share.htm" title="「11月26日」最高速度20.8M/S，2024年ClashX Node每天更新免费机场订阅节点链接">「11月26日」最高速度20.8M/S，2024年ClashX Node每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-15-free-subscribe-node.htm" title="「10月15日」最高速度19.7M/S，2024年ClashX Node每天更新免费机场订阅节点链接">「10月15日」最高速度19.7M/S，2024年ClashX Node每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/news/article-24591.htm" title="宠物医院治仓鼠贵不贵呢视频（宠物医院治疗仓鼠费用）">宠物医院治仓鼠贵不贵呢视频（宠物医院治疗仓鼠费用）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-22-clash-meta-windows.htm" title="「12月22日」最高速度18.3M/S，2024年ClashX Node每天更新免费机场节点链接地址">「12月22日」最高速度18.3M/S，2024年ClashX Node每天更新免费机场节点链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-14-node-share-links.htm" title="「11月14日」最高速度19.9M/S，2024年ClashX Node每天更新免费机场订阅节点链接">「11月14日」最高速度19.9M/S，2024年ClashX Node每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-23-clash-node-daily-updates.htm" title="「12月23日」最高速度20.3M/S，2024年ClashX Node每天更新免费机场节点链接地址">「12月23日」最高速度20.3M/S，2024年ClashX Node每天更新免费机场节点链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-6-node-share.htm" title="「12月6日」最高速度21.9M/S，2024年ClashX Node每天更新免费机场订阅节点链接">「12月6日」最高速度21.9M/S，2024年ClashX Node每天更新免费机场订阅节点链接</a></li>
                         <li class="py-2"><a href="/free-nodes/2024-12-15-node-share.htm" title="「12月15日」最高速度19.7M/S，2024年ClashX Node每天更新免费机场订阅节点链接">「12月15日」最高速度19.7M/S，2024年ClashX Node每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/news/article-19076.htm" title="厦门领养宠物的平台的简单介绍">厦门领养宠物的平台的简单介绍</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-17-free-high-speed-nodes.htm" title="「9月17日」最高速度21.6M/S，2024年ClashX Node每天更新免费机场订阅节点链接">「9月17日」最高速度21.6M/S，2024年ClashX Node每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/news/article-24125.htm" title="太阳宫附近有什么医院（太阳宫附近有啥好玩的）">太阳宫附近有什么医院（太阳宫附近有啥好玩的）</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-12-13-clash-windows.htm" title="「12月13日」最高速度20.3M/S，2024年ClashX Node每天更新免费机场订阅节点链接">「12月13日」最高速度20.3M/S，2024年ClashX Node每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-26-free-node-subscribe.htm" title="「10月26日」最高速度20.4M/S，2024年ClashX Node每天更新免费机场订阅节点链接">「10月26日」最高速度20.4M/S，2024年ClashX Node每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-10-16-node-share-links.htm" title="「10月16日」最高速度20.8M/S，2024年ClashX Node每天更新免费机场订阅节点链接">「10月16日」最高速度20.8M/S，2024年ClashX Node每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-9-30-free-clash-stash.htm" title="「9月30日」最高速度23M/S，2024年ClashX Node每天更新免费机场订阅节点链接">「9月30日」最高速度23M/S，2024年ClashX Node每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/free-nodes/2024-11-17-free-node-subscribe-links.htm" title="「11月17日」最高速度21.7M/S，2024年ClashX Node每天更新免费机场订阅节点链接">「11月17日」最高速度21.7M/S，2024年ClashX Node每天更新免费机场订阅节点链接</a></li>
-                        <li class="py-2"><a href="/news/article-22741.htm" title="私下签订的宠物领养协议有效吗（私下签订的宠物领养协议有效吗合法吗）">私下签订的宠物领养协议有效吗（私下签订的宠物领养协议有效吗合法吗）</a></li>
                     </ul>
     </div>
 </div>
