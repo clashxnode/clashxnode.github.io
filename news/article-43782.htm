@@ -1,0 +1,290 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxnode.github.io/news/article-43782.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>如何在Web前端实现CAD图文字全文搜索功能之技术分享</title>
+        <meta name="description" content="在CAD看图过程中我们经常会需要用到查找文字的功能，在AutoCAD软件查找一个文字时，可以通过打开左下角输入命令find，输入查找的文字，然后设置查找范围，就可以搜索到需要查询的文字。但在Web网页" />
+        <link rel="icon" href="/assets/website/img/clashxnode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="ClashX Node节点订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashxnode.github.io/news/article-43782.htm" />
+    <meta property="og:site_name" content="ClashX Node节点订阅官网" />
+    <meta property="og:title" content="如何在Web前端实现CAD图文字全文搜索功能之技术分享" />
+    <meta property="og:image" content="https://clashxnode.github.io/uploads/20240904/5a5903fbed67198da2581e282434d5f0.webp" />
+        <meta property="og:release_date" content="2025-01-21T09:48:33" />
+    <meta property="og:updated_time" content="2025-01-21T09:48:33" />
+        <meta property="og:description" content="在CAD看图过程中我们经常会需要用到查找文字的功能，在AutoCAD软件查找一个文字时，可以通过打开左下角输入命令find，输入查找的文字，然后设置查找范围，就可以搜索到需要查询的文字。但在Web网页" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS here -->
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/animate.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/flaticon.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/odometer.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/slick.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/default.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/style.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/responsive.css">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="如何在Web前端实现CAD图文字全文搜索功能之技术分享">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0ENMRSJ9N6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0ENMRSJ9N6');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- preloader -->
+    <div id="preloader">
+        <div id="loading-center">
+            <div class="loader">
+                <div class="loader-outter"></div>
+                <div class="loader-inner"></div>
+            </div>
+        </div>
+    </div>
+    <!-- preloader-end -->
+    <!-- Scroll-top -->
+    <button class="scroll-top scroll-to-target" data-target="html">
+        <i class="fas fa-angle-up"></i>
+    </button>
+    <!-- Scroll-top-end-->
+    <!-- header-area -->
+    <header>
+        <div id="sticky-header" class="main-header menu-area">
+            <div class="container custom-container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="mobile-nav-toggler"><i class="fas fa-bars"></i></div>
+                        <div class="menu-wrap">
+                            <nav class="menu-nav show">
+                                <div class="logo">
+                                                                        <a href="/">
+                                        <span>ClashX Node</span>
+                                    </a>
+                                                                    </div>
+                                <div class="navbar-wrap main-menu d-none d-lg-flex">
+                                    <ul class="navigation">
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                                <li><a href="#">关于</a></li>
+                                        <li><a href="#">联系</a></li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                        <!-- Mobile Menu  -->
+                        <div class="mobile-menu">
+                            <nav class="menu-box">
+                                <div class="close-btn"><i class="fas fa-times"></i></div>
+                                <div class="nav-logo"><a href="/">ClashX Node</a>
+                                </div>
+                                <div class="menu-outer">
+                                    <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+                                </div>
+                                <div class="social-links">
+                                    <ul class="clearfix">
+                                        <li><a href="#"><span class="fab fa-twitter"></span></a></li>
+                                        <li><a href="#"><span class="fab fa-facebook-square"></span></a></li>
+                                        <li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
+                                        <li><a href="#"><span class="fab fa-instagram"></span></a></li>
+                                        <li><a href="#"><span class="fab fa-youtube"></span></a></li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="menu-backdrop"></div>
+                        <!-- End Mobile Menu -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- header-search -->
+        <div class="search-popup-wrap" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="search-close">
+                <span><i class="fas fa-times"></i></span>
+            </div>
+            <div class="search-wrap text-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="title">... Search Here ...</h2>
+                            <div class="search-form">
+                                <form action="#">
+                                    <input type="text" name="search" placeholder="Type keywords here">
+                                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- header-search-end -->
+    </header>
+    <!-- header-area-end -->
+    <!-- main-area -->
+    <main>
+        <!-- breadcrumb-area -->
+        <section class="breadcrumb-area breadcrumb-bg" data-background="/assets/website/img/clashxnode/bg/breadcrumb_bg.jpg">
+            <div class="container">
+                <div class="container-inner-wrap">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="breadcrumb-content">
+                                <h1 class="title">如何在Web前端实现CAD图文字全文搜索功能之技术分享</h1>
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- breadcrumb-area-end -->
+        <!-- customer-feedback -->
+        <section class="customer-feedback-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				</h1> <p class="md-end-block md-p"><span class="md-plain"> 在CAD看图过程中我们经常会需要用到查找文字的功能，在AutoCAD软件查找一个文字时，可以通过打开左下角输入命令<span class="md-pair-s"><code>find</code><span class="md-plain">，输入查找的文字，然后设置查找范围，就可以搜索到需要查询的文字。但在Web网页端打开CAD图查找文字时，有没有同样的办法呢？另外，如果有没有办法实现在很多图纸中像百度那样做到全文检索的功能？</span></span></span></p> </h1> <h2 class="md-end-block md-heading"><span class="md-plain">CAD图Web打开展示</span></h2> <p class="md-end-block md-p"><span class="md-plain"> 拿之前分享的一款开源的利用最新技术栈<span class="md-pair-s"><code>Vue3</code><span class="md-plain">开发的<span class="md-meta-i-c  md-link"><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://vjmap.com/app/cloud"  rel="nofollow"><span class="md-plain">唯杰地图云端图纸管理平台</span></a><span class="md-plain">为例. 他实现了对<span class="md-pair-s"><code>AutoCAD</code><span class="md-plain">格式的<span class="md-pair-s"><code>DWG</code><span class="md-plain">图纸的云端管理查看功能。能对CAD图纸在线上传、打开、查看、版本管理; 在线图层管理切换查看功能; 属性数据查询功能等功能。</span></span></span></span></span></span></span></span></span></p> <h2 class="md-end-block md-heading"><span class="md-plain">图中文字查找</span></h2> <p class="md-end-block md-p"><span class="md-plain">图纸中文字查找方案</span></p> <h3 class="md-end-block md-heading"><span class="md-plain">方法一 直接后台读取CAD图纸内容，遍历所有的文字实体进行查找。</span></h3> <p class="md-end-block md-p"><span class="md-plain"> 主要的文字实体包括 单行文本<span class="md-pair-s"><code>AcDbText</code><span class="md-plain">，多行文本<span class="md-pair-s"><code>AcDbMText</code><span class="md-plain">,属性注记<span class="md-pair-s"><code>AcDbAttributeDefinition</code><span class="md-plain">,块属性<span class="md-pair-s"><code>AcDbAttribute</code></span></span></span></span></span></span></span></span></p> <p class="md-end-block md-p"><span class="md-plain"> 实现步骤:</span></p> <p class="md-end-block md-p md-focus"><span class="md-plain md-expand"> （1） 在前端写代码通过内存方式在后台打开CAD图形</span></p> <pre class="md-fences md-end-block ty-contain-cm modeLoaded"><span><span class="cm-comment">// 打开地图<br/><span><span class="cm-keyword">let<span class="cm-def">res<span class="cm-operator">=<span class="cm-keyword">await<span class="cm-variable">svc.<span class="cm-property">openMap({<br/><span><span class="cm-property">mapid:<span class="cm-string">'mapid',<span class="cm-comment">// 地图ID,(请确保此ID已存在，可上传新图形新建ID)<br/><span><span class="cm-property">mapopenway:<span class="cm-variable">vjmap.<span class="cm-property">MapOpenWay.<span class="cm-property">Memory,<span class="cm-comment">// 后台以内存方式打开已上传的图<br/><span>})</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></pre> <p class="md-end-block md-p"><span class="md-plain"> (2) 查找文本实体，因为前端是javascript语言，不可能直接去遍历后台图形数据库，这时可以用表达式查询来后台进行查询</span></p> <pre class="md-fences md-end-block ty-contain-cm modeLoaded"><span><span class="cm-keyword">let<span class="cm-def">query<span class="cm-operator">=<span class="cm-keyword">await<span class="cm-variable">svc.<span class="cm-property">exprQueryFeature({<br/><span><span class="cm-property">expr:<span class="cm-string-2">`gOutReturn := if((gInFeatureType == 'AcDbText' or  gInFeatureType == 'AcDbMText'  or  gInFeatureType == 'AcDbAttributeDefinition'  or  gInFeatureType == 'AcDbAttribute'  ), 1, 0);`,<br/><span><span class="cm-property">fields:<span class="cm-string">"",<br/><span><span class="cm-property">limit:<span class="cm-number">100000<br/><span> })</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></pre> <p class="md-end-block md-p"><span class="md-plain">表达式语法可参考<span class="md-link md-pair-s"><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://vjmap.com/guide/expr.html"  rel="nofollow">https://vjmap.com/guide/expr.html</a></span></span></p> <p class="md-end-block md-p"><span class="md-plain">这样查询有个缺点就是每次查询都要在后台打开CAD图形，然后再遍历图形数据库，根据表达式过滤出要查找的文字，效率低。</span></p> <p class="md-end-block md-p"><span class="md-image md-img-loaded" data-src="http://img.555519.xyz/uploads3/20220509/11da1a8176a9203bc8f3914a64bbc2bb.jpg" alt="如何在Web前端实现CAD图文字全文搜索功能之技术分享"><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/11da1a8176a9203bc8f3914a64bbc2bb.jpg" alt="如何在Web前端实现CAD图文字全文搜索功能之技术分享"></span></p> <h3 class="md-end-block md-heading"><span class="md-plain">方法二 通过SQL语句查询数据库来查找文字</span></h3> <p class="md-end-block md-p"><span class="md-plain">实现步骤:</span></p> <p class="md-end-block md-p"><span class="md-plain"> （1） 在前端写代码通过几何渲染方式在后台打开CAD图形，几何渲染方式第一次请求数据时，会在后台打开图形，然后把图形数据和属性数据会保存至空间数据库，之后请求都会在空间数据库里查询数据。</span></p> <pre class="md-fences md-end-block ty-contain-cm modeLoaded"><span><span class="cm-comment">// 打开地图<br/><span><span class="cm-keyword">let<span class="cm-def">res<span class="cm-operator">=<span class="cm-keyword">await<span class="cm-variable">svc.<span class="cm-property">openMap({<br/><span><span class="cm-property">mapid:<span class="cm-variable">env.<span class="cm-property">exampleMapId,<span class="cm-comment">// 地图ID,(请确保此ID已存在，可上传新图形新建ID)<br/><span><span class="cm-property">mapopenway:<span class="cm-variable">vjmap.<span class="cm-property">MapOpenWay.<span class="cm-property">GeomRender<span class="cm-comment">// 以几何数据渲染方式打开<br/><span>})</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></pre> <p class="md-end-block md-p"><span class="md-plain"> (2) sql语句查询文字，直接上代码</span></p> <pre class="md-fences md-end-block ty-contain-cm modeLoaded"><span><span class="cm-keyword">let<span class="cm-def">query<span class="cm-operator">=<span class="cm-keyword">await<span class="cm-variable">svc.<span class="cm-property">conditionQueryFeature({<br/><span><span class="cm-comment">//只需要写sql语句where后面的条件内容,字段内容请参考文档"服务端条件查询和表达式查询"<br/><span><span class="cm-comment">// 查询所有文字(包括单行文本，多行文本、块注记文字，属性文字) 具体类型数字参考文档"服务端条件查询和表达式查询-支持的cad实体类型" https://vjmap.com/guide/svrStyleVar.html<br/><span><span class="cm-property">condition:<span class="cm-string-2">`name='12' or name='13' or name='26' or name='27'`,<br/><span><span class="cm-property">fields:<span class="cm-string">""<br/><span> })</span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></span></pre> <p class="md-end-block md-p"><span class="md-plain">SQL查询无需在后台再次打开CAD图形，直接使用SQL语句查询数据库,效率高。</span></p> <p class="md-end-block md-p"><span class="md-image md-img-loaded" data-src="http://img.555519.xyz/uploads3/20220509/8103e17f1de09c92c9eaa3a1483aa3b8.jpg" alt="如何在Web前端实现CAD图文字全文搜索功能之技术分享"><img decoding="async" src="http://img.555519.xyz/uploads3/20220509/8103e17f1de09c92c9eaa3a1483aa3b8.jpg" alt="如何在Web前端实现CAD图文字全文搜索功能之技术分享"></span></p> <p class="md-end-block md-p"> <h2 class="md-end-block md-heading"><span class="md-plain">全文检索功能</span></h2> <p class="md-end-block md-p"><span class="md-plain">如果后台有成百上千纸图纸，怎么做到全文检索呢？</span></p> <p class="md-end-block md-p"><span class="md-plain">首先想到的肯定是遍历所有的图纸，然后根据要搜索的文字一个个的去查询，这样也能实现，就是图纸比较多时，性能太低了，耗时。</span></p> <p class="md-end-block md-p"><span class="md-plain">这里可以利用开源的全文检索库去实现。</span></p> <p class="md-end-block md-p"><span class="md-plain">开源的<span class="md-meta-i-c  md-link"><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://www.elastic.co/"  rel="nofollow"><span class="md-plain">Elasticsearch</span></a><span class="md-plain"> （以下简称 ES）是目前全文搜索引擎的首选。</span></span></span></p> <p class="md-end-block md-p"><span class="md-plain">它可以快速地储存、搜索和分析海量数据。维基百科、Stack Overflow、Github 都采用它。</span></p> <p class="md-end-block md-p"><span class="md-plain">可以在后台实时查找出所有图形的文字然后利用ES建立索引，然后利用ES去查询，根据查找的结果定位到某图某实体上。</span></p> <p class="md-end-block md-p"><span class="md-plain">但是ES太重量级了，也难部署，用到这种搜索功能上简直就是大材小用。</span></p> <p class="md-end-block md-p"><span class="md-plain">下面推荐一款轻量级的单文件部署的全文搜索开源引擎。</span></p> <p class="md-end-block md-p"><span class="md-plain">Bleve是一款基于Golang实现的全文搜索与索引组件库，具有简单的API、丰富的接口扩展能力、映射可自定义、全面的索引数据类型等特点。</span></p> <ul class="ul-list" data-mark="-"> <li class="md-list-item"> <p class="md-end-block md-p"><span class="md-plain">组件官网：<span class="md-meta-i-c  md-link"><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://links.jianshu.com/go?to=http%3A%2F%2Fblevesearch.com%2F"  rel="nofollow"><span class="md-plain">http://blevesearch.com/</span></a></span></span></p> </li> <li class="md-list-item"> <p class="md-end-block md-p"><span class="md-plain">组件仓库：<span class="md-meta-i-c  md-link"><a href="http://www.m6000.cn/wp-content/themes/begin%20lts/inc/go.php?url=https://links.jianshu.com/go?to=https%3A%2F%2Fgithub.com%2Fblevesearch%2Fbleve"  rel="nofollow"><span class="md-plain">https://github.com/blevesearch/bleve</span></a></span></span></p> <p class="md-end-block md-p"> <p class="md-end-block md-p"><span class="md-plain md-expand">有兴趣的朋友可以搭建研究下。</span></p> </li> </ul> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-43284.htm">吉泰生物科技有限公司 吉泰生物科技有限公司官网</a></p>
+                                        <p>下一个：<a href="/news/article-43783.htm">猫科医生在线咨询（猫科的医生）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2024-12-14-free-node-subscribe.htm" title="「12月14日」最高速度21M/S，2024年ClashX Node每天更新免费机场订阅节点链接">「12月14日」最高速度21M/S，2024年ClashX Node每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-10-28-free-high-speed-nodes.htm" title="「10月28日」最高速度19.2M/S，2024年ClashX Node每天更新免费机场订阅节点链接">「10月28日」最高速度19.2M/S，2024年ClashX Node每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/news/article-24591.htm" title="宠物医院治仓鼠贵不贵呢视频（宠物医院治疗仓鼠费用）">宠物医院治仓鼠贵不贵呢视频（宠物医院治疗仓鼠费用）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-18-clash-node-github.htm" title="「11月18日」最高速度18.3M/S，2024年ClashX Node每天更新免费机场订阅节点链接">「11月18日」最高速度18.3M/S，2024年ClashX Node每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/news/article-29233.htm" title="重庆宠物狗狗免费领养中心（2021重庆免费领养狗狗贴吧）">重庆宠物狗狗免费领养中心（2021重庆免费领养狗狗贴吧）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-6-free-clash.htm" title="「1月6日」最高速度19.8M/S，2025年ClashX Node每天更新免费机场节点链接地址">「1月6日」最高速度19.8M/S，2025年ClashX Node每天更新免费机场节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-21825.htm" title="领养协议书模板（领养协议书模板图片）">领养协议书模板（领养协议书模板图片）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-19-clash-meta-windows.htm" title="「11月19日」最高速度19.7M/S，2024年ClashX Node每天更新免费机场订阅节点链接">「11月19日」最高速度19.7M/S，2024年ClashX Node每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/news/article-37348.htm" title="宠物领养app有哪些软件 宠物领养app有哪些软件好用">宠物领养app有哪些软件 宠物领养app有哪些软件好用</a></li>
+                        <li class="py-2"><a href="/news/article-33518.htm" title="动物疫苗价格查询表图片高清版 动物疫苗价格查询表图片高清版大全">动物疫苗价格查询表图片高清版 动物疫苗价格查询表图片高清版大全</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">63</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">32</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">25</span> <a href="/date/2024-10/" title="2024-10 归档">2024-10</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- customer-feedback-end -->
+    </main>
+    <!-- main-area-end -->
+        <!-- footer-area -->
+    <footer>
+        <div class="copyright-wrap">
+            <div class="container">
+                <div class="container-inner-wrap">
+                    <div class="row align-items-center">
+                        <div class="col-lg-8 col-md-9">
+                            <div class="copyright-text">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                                <p>
+                                    <a href="/">ClashX Node节点订阅官网</a> 版权所有 Powered by WordPress
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer-area-end -->
+    <!-- JS here -->
+    <script src="/assets/website/js/frontend/clashxnode/jquery-3.6.0.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/jquery.odometer.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/jquery.appear.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/slick.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/ajax-form.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/aos.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/plugins.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
