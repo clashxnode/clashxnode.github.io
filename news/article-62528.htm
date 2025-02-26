@@ -1,0 +1,268 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxnode.github.io/news/article-62528.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>vue实现可以快进后退的跑马灯组件_vue.js</title>
+        <meta name="description" content="本文实例为大家分享了vue开发实现跑马灯效果组件的具体代码，供大家参考，具体内容如下 用vue编写一个可以快进后退的跑马灯组件 由于业务需求，要实现一个会可以控制速度的跑马灯，初开始用js的setin" />
+        <link rel="icon" href="/assets/website/img/clashxnode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="ClashX Node节点订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashxnode.github.io/news/article-62528.htm" />
+    <meta property="og:site_name" content="ClashX Node节点订阅官网" />
+    <meta property="og:title" content="vue实现可以快进后退的跑马灯组件_vue.js" />
+    <meta property="og:image" content="https://clashxnode.github.io/uploads/20240904/551dade2bf3961bf3b79acd6ce53f998.webp" />
+        <meta property="og:release_date" content="2025-02-25T04:58:20" />
+    <meta property="og:updated_time" content="2025-02-25T04:58:20" />
+        <meta property="og:description" content="本文实例为大家分享了vue开发实现跑马灯效果组件的具体代码，供大家参考，具体内容如下 用vue编写一个可以快进后退的跑马灯组件 由于业务需求，要实现一个会可以控制速度的跑马灯，初开始用js的setin" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS here -->
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/animate.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/flaticon.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/odometer.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/slick.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/default.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/style.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/responsive.css">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="vue实现可以快进后退的跑马灯组件_vue.js">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0ENMRSJ9N6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0ENMRSJ9N6');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- preloader -->
+    <div id="preloader">
+        <div id="loading-center">
+            <div class="loader">
+                <div class="loader-outter"></div>
+                <div class="loader-inner"></div>
+            </div>
+        </div>
+    </div>
+    <!-- preloader-end -->
+    <!-- Scroll-top -->
+    <button class="scroll-top scroll-to-target" data-target="html">
+        <i class="fas fa-angle-up"></i>
+    </button>
+    <!-- Scroll-top-end-->
+    <!-- header-area -->
+    <header>
+        <div id="sticky-header" class="main-header menu-area">
+            <div class="container custom-container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="mobile-nav-toggler"><i class="fas fa-bars"></i></div>
+                        <div class="menu-wrap">
+                            <nav class="menu-nav show">
+                                <div class="logo">
+                                    <a href="/">
+                                                                            <span>ClashX Node</span>
+                                    
+                                                                        </a>
+                                </div>
+                                <div class="navbar-wrap main-menu d-none d-lg-flex">
+                                    <ul class="navigation">
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </div>
+                            </nav>
+                        </div>
+                        <!-- Mobile Menu  -->
+                        <div class="mobile-menu">
+                            <nav class="menu-box">
+                                <div class="close-btn"><i class="fas fa-times"></i></div>
+                                <div class="nav-logo"><a href="/">ClashX Node</a>
+                                </div>
+                                <div class="menu-outer">
+                                    <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+                                </div>
+                                <div class="social-links">
+                                    <ul class="clearfix">
+                                        <li><a href="#"><span class="fab fa-twitter"></span></a></li>
+                                        <li><a href="#"><span class="fab fa-facebook-square"></span></a></li>
+                                        <li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
+                                        <li><a href="#"><span class="fab fa-instagram"></span></a></li>
+                                        <li><a href="#"><span class="fab fa-youtube"></span></a></li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="menu-backdrop"></div>
+                        <!-- End Mobile Menu -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-area-end -->
+    <!-- main-area -->
+    <main>
+        <!-- breadcrumb-area -->
+        <section class="breadcrumb-area breadcrumb-bg" data-background="/assets/website/img/clashxnode/bg/breadcrumb_bg.jpg">
+            <div class="container">
+                <div class="container-inner-wrap">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="breadcrumb-content">
+                                <h1 class="title">vue实现可以快进后退的跑马灯组件_vue.js</h1>
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- breadcrumb-area-end -->
+        <!-- customer-feedback -->
+        <section class="customer-feedback-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<p>本文实例为大家分享了vue开发实现跑马灯效果组件的具体代码，供大家参考，具体内容如下</p> <p><strong>用vue编写一个可以快进后退的跑马灯组件</strong></p> <p>由于业务需求，要实现一个会可以控制速度的跑马灯，初开始用js的setinterval每隔几毫秒来减取一个字符拼接到后面，效果不理想就放弃了。后查询用js的animate这个api改造大功告成！</p> <p>效果图</p> <p style="text-align:center"><img decoding="async" alt="" src="http://img.555519.xyz/uploads3/20220424/df6ffc8cb8ca166453225e5475f7fc71.jpg"></p> <p><strong>组件代码</strong></p> <div class="ay1code"> <pre class="brush:xhtml;">&lt;template&gt;    &lt;div class="marquee" @mouseover="pause(true)" @mouseleave="pause()"&gt;      &lt;i        class="marquee-btn btn-left el-icon-d-arrow-left"        @mousedown="speedUp(true)"        @mouseup="speedStop()"      &gt;&lt;/i&gt;      &lt;div ref="marqueeText" class="marquee-text"&gt;        &lt;div v-if="itemClick"&gt;          &lt;span            v-for="item in text.split(splitSymbol)"            :key="item"            @click="$emit('itemClickEvent', item)"          &gt;{{item + ' 、'}}&lt;/span&gt;        &lt;/div&gt;        &lt;div v-else&gt;{{text}}&lt;/div&gt;      &lt;/div&gt;      &lt;i        class="marquee-btn btn-right el-icon-d-arrow-right"        @mousedown="speedUp()"        @mouseup="speedStop()"      &gt;&lt;/i&gt;    &lt;/div&gt;  &lt;/template&gt;    &lt;script&gt;  export default {    name: "marquee",    props: {      text: {        type: String,        required: true      },      speed: {        type: Number,        required: false,        default: 110      },      // 是否每个都可以点击触发事件      itemClick: {        type: Boolean,        required: false,        default: false      },      // 每个触发事件元素的分割符号      splitSymbol: {        type: String,        required: false,        default: ''      }    },    data() {      return {        aniInstance: null,        speedTimer: null      };    },    methods: {      setAnimate() {        const contentWidth = this.$refs.marqueeText.scrollWidth;        const keyframes = [          { transform: "translateX(100%)" },          { transform: `translateX(-${contentWidth}px)` }        ];        const animateOptions = {          duration: (contentWidth / this.speed) * 1000,          iterations: Infinity,          easing: "linear"        };        this.aniInstance = document.querySelector(".marquee-text").animate(keyframes, animateOptions);      },      /**       * 快进       * @param { Boolean } isLeft 是否为左方向       */      speedUp(isLeft = false) {        const set = () =&gt; {          if (this.aniInstance.currentTime &gt; 0) {            this.aniInstance.currentTime = this.aniInstance.currentTime + (isLeft ? 2000 : -2000);            this.aniInstance.currentTime &lt;= 0 &amp;&amp; (this.aniInstance.currentTime = 0);          }        }        // 鼠标单击        set();        // 鼠标长按        this.speedTimer = setInterval(() =&gt; {          set()        }, 100);      },      // 快进停止      speedStop() {        clearInterval(this.speedTimer);        this.speedTimer = null;      },      /**       * 暂停、播放       * @param { Boolean } isPause 是否暂停       */      pause(isPause = false) {        this.aniInstance[["play", "pause"][Number(isPause)]]();      }    },    mounted() {      this.$nextTick(() =&gt; {        this.setAnimate();      });    }  };  &lt;/script&gt;    &lt;style lang="less" scoped&gt;  .marquee {    position: relative;    padding: 10px 0;    overflow: hidden;    width: 100%;    font-size: 16px;    color: #fff;    background-image: linear-gradient(      to left,      #b9565e,      #cb655a,      #da7655,      #e58a50,      #eb9f4b    );    &amp;:hover .marquee-btn {      opacity: 1;    }  }  .marquee-btn {    position: absolute;    top: 50%;    transform: translateY(-50%);    padding: 15px;    color: #fff;    background: rgba(1, 1, 1, 0.4);    z-index: 999;    cursor: pointer;    opacity: 0;    transition: all 0.2s linear;  }  .btn-left {    left: 0;  }  .btn-right {    right: 0;  }  .marquee-text {    white-space: nowrap;    span {      &amp;:hover {        cursor: pointer;        color: #2c3e50;      }    }  }  &lt;/style&gt;</pre> </div> <p><strong>父组件代码</strong></p> <div class="ay1code"> <pre class="brush:js;">&lt;Marquee    :text="overdueInfo.content"    :itemClick="true"    :speed="120"    splitSymbol="、"    @itemClickEvent="marqueeSearch"    class="marquee-box__container"  &gt;&lt;/Marquee&gt;</pre> </div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-61926.htm">动物医院大众点评评语怎么写啊 动物医院大众点评评语怎么写啊英语</a></p>
+                                        <p>下一个：<a href="/news/article-62529.htm">开宠物店成本多少（开个宠物店成本大概要多少）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-36859.htm" title="猫三联需要两针还是三针打（猫三联需要两针还是三针打一针）">猫三联需要两针还是三针打（猫三联需要两针还是三针打一针）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-11-8-free-clash.htm" title="「11月8日」最高速度19.3M/S，2024年ClashX Node每天更新免费机场订阅节点链接">「11月8日」最高速度19.3M/S，2024年ClashX Node每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-3-free-node-subscribe.htm" title="「12月3日」最高速度18.2M/S，2024年ClashX Node每天更新免费机场订阅节点链接">「12月3日」最高速度18.2M/S，2024年ClashX Node每天更新免费机场订阅节点链接</a></li>
+                        <li class="py-2"><a href="/news/article-47229.htm" title="瑞鹏宠物医院消费价格查询（瑞鹏宠物医院消费价格查询官网）">瑞鹏宠物医院消费价格查询（瑞鹏宠物医院消费价格查询官网）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-19-free-clash-stash.htm" title="「2月19日」最高速度20.9M/S，2025年ClashX Node每天更新免费机场节点链接地址">「2月19日」最高速度20.9M/S，2025年ClashX Node每天更新免费机场节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-25048.htm" title="通过拆分属性将数组转换为对象-JavaScript">通过拆分属性将数组转换为对象-JavaScript</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-23-clash-node-daily-updates.htm" title="「12月23日」最高速度20.3M/S，2024年ClashX Node每天更新免费机场节点链接地址">「12月23日」最高速度20.3M/S，2024年ClashX Node每天更新免费机场节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-38328.htm" title="沈阳卖猫的宠物店在哪（沈阳哪儿有卖猫的）">沈阳卖猫的宠物店在哪（沈阳哪儿有卖猫的）</a></li>
+                        <li class="py-2"><a href="/news/article-46260.htm" title="宠物猫驱虫药多少钱一盒（猫咪驱虫剂多少钱）">宠物猫驱虫药多少钱一盒（猫咪驱虫剂多少钱）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2024-12-28-free-clash-subscribe.htm" title="「12月28日」最高速度18.8M/S，2024年ClashX Node每天更新免费机场节点链接地址">「12月28日」最高速度18.8M/S，2024年ClashX Node每天更新免费机场节点链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">78</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">93</span> <a href="/date/2024-12/" title="2024-12 归档">2024-12</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">28</span> <a href="/date/2024-11/" title="2024-11 归档">2024-11</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- customer-feedback-end -->
+    </main>
+    <!-- main-area-end -->
+        <!-- footer-area -->
+    <footer>
+        <div class="copyright-wrap">
+            <div class="container">
+                <div class="container-inner-wrap">
+                    <div class="row align-items-center">
+                        <div class="col-lg-8 col-md-9">
+                            <div class="copyright-text">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                                <p>
+                                    <a href="/">ClashX Node节点订阅官网</a> 版权所有 Powered by WordPress
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer-area-end -->
+    <!-- JS here -->
+    <script src="/assets/website/js/frontend/clashxnode/jquery-3.6.0.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/jquery.odometer.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/jquery.appear.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/slick.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/ajax-form.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/aos.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/plugins.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
