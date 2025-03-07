@@ -1,0 +1,265 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxnode.github.io/news/article-68736.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>django之使用supervisord 后台启动celery 服务(worker/beat)</title>
+        <meta name="description" content="Supervisor是用Python开发的一个client/server服务，是Linux/Unix系统下的一个进程管理工具，不支持Windows系统，这篇文章主要介绍了python测试开发djang" />
+        <link rel="icon" href="/assets/website/img/clashxnode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="ClashX Node节点订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashxnode.github.io/news/article-68736.htm" />
+    <meta property="og:site_name" content="ClashX Node节点订阅官网" />
+    <meta property="og:title" content="django之使用supervisord 后台启动celery 服务(worker/beat)" />
+    <meta property="og:image" content="https://clashxnode.github.io/uploads/20240904/5d7ae353f6e7c9accb6400ceabcb0a7d.webp" />
+        <meta property="og:release_date" content="2025-03-07T06:34:12" />
+    <meta property="og:updated_time" content="2025-03-07T06:34:12" />
+        <meta property="og:description" content="Supervisor是用Python开发的一个client/server服务，是Linux/Unix系统下的一个进程管理工具，不支持Windows系统，这篇文章主要介绍了python测试开发djang" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS here -->
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/animate.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/flaticon.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/odometer.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/slick.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/default.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/style.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/responsive.css">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="django之使用supervisord 后台启动celery 服务(worker/beat)">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0ENMRSJ9N6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0ENMRSJ9N6');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- preloader -->
+    <div id="preloader">
+        <div id="loading-center">
+            <div class="loader">
+                <div class="loader-outter"></div>
+                <div class="loader-inner"></div>
+            </div>
+        </div>
+    </div>
+    <!-- preloader-end -->
+    <!-- Scroll-top -->
+    <button class="scroll-top scroll-to-target" data-target="html">
+        <i class="fas fa-angle-up"></i>
+    </button>
+    <!-- Scroll-top-end-->
+    <!-- header-area -->
+    <header>
+        <div id="sticky-header" class="main-header menu-area">
+            <div class="container custom-container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="mobile-nav-toggler"><i class="fas fa-bars"></i></div>
+                        <div class="menu-wrap">
+                            <nav class="menu-nav show">
+                                <div class="logo">
+                                    <a href="/">
+                                                                            <span>ClashX Node</span>
+                                    
+                                                                        </a>
+                                </div>
+                                <div class="navbar-wrap main-menu d-none d-lg-flex">
+                                    <ul class="navigation">
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </div>
+                            </nav>
+                        </div>
+                        <!-- Mobile Menu  -->
+                        <div class="mobile-menu">
+                            <nav class="menu-box">
+                                <div class="close-btn"><i class="fas fa-times"></i></div>
+                                <div class="nav-logo"><a href="/">ClashX Node</a>
+                                </div>
+                                <div class="menu-outer">
+                                    <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+                                </div>
+                                <div class="social-links">
+                                    <ul class="clearfix">
+                                        <li><a href="#"><span class="fab fa-twitter"></span></a></li>
+                                        <li><a href="#"><span class="fab fa-facebook-square"></span></a></li>
+                                        <li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
+                                        <li><a href="#"><span class="fab fa-instagram"></span></a></li>
+                                        <li><a href="#"><span class="fab fa-youtube"></span></a></li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="menu-backdrop"></div>
+                        <!-- End Mobile Menu -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-area-end -->
+    <!-- main-area -->
+    <main>
+        <!-- breadcrumb-area -->
+        <section class="breadcrumb-area breadcrumb-bg" data-background="/assets/website/img/clashxnode/bg/breadcrumb_bg.jpg">
+            <div class="container">
+                <div class="container-inner-wrap">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="breadcrumb-content">
+                                <h1 class="title">django之使用supervisord 后台启动celery 服务(worker/beat)</h1>
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- breadcrumb-area-end -->
+        <!-- customer-feedback -->
+        <section class="customer-feedback-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <p>Supervisor是用Python开发的一个client/server服务，是Linux/Unix系统下的一个进程管理工具，不支持Windows系统，这篇文章主要介绍了python测试开发django之使用supervisord 后台启动celery 服务(worker/beat),需要的朋友可以参考下</p> <p>前言<br /> Supervisor（‘http://supervisord.org/’）是用Python开发的一个client/server服务，是Linux/Unix系统下的一个进程管理工具，不支持Windows系统。<br /> 它可以很方便的监听、启动、停止、重启一个或多个进程。<br /> 用Supervisor管理的进程，当一个进程意外被杀死，supervisort监听到进程死后，会自动将它重新拉起，很方便的做到进程自动恢复的功能，不再需要自己写shell脚本来控制。</p> <p>环境准备<br /> centos 安装 supervisord</p> <blockquote> <p>yum install -y epel-release &amp;&amp; yum install -y supervisor</p> </blockquote> <p>安装完成后在/etc/supervisor 目录下会有个配置文件 supervisord.conf<br /> 在项目中我们需要用到此配置，复制一份到项目根目录<br /> supervisord.conf文件内容编写, 前面内容不用改，直接接着在后面写<br /> 比如我需要后台启动celery的worker和beat服务</p> <pre><code>; Sample supervisor config file. ; ; For more information on the config file, please see: ; http://supervisord.org/configuration.html   ; 前面文档省略，不用删，接着后面写   [program:celery-worker] command=celery -A hrun2_web worker -l info ; 管理命令，supervisor不支持后台进程 process_name=%(program_name)s #user=root                                 ;进程启动用户 autostart=true                           ;是否随supervisor启动 autorestart=true                         ;是否在挂了之后重启，意外关闭后会重启，比如kill掉！ startretries=3                           ;启动尝试次数 stderr_logfile=./celery_worker.log           ;标准输出文件 stdout_logfile=./celery_worker.log        ;标准输出文件 loglevel=info                            ;日志的级别     [program:celery-beat] command=celery -A hrun2_web beat ; 管理命令，supervisor不支持后台进程 process_name=%(program_name)s #user=root                                 ;进程启动用户 autostart=true                           ;是否随supervisor启动 autorestart=true                         ;是否在挂了之后重启，意外关闭后会重启，比如kill掉！ startretries=3                           ;启动尝试次数 stderr_logfile=./celery_beat.log          ;标准输出文件 stdout_logfile=./celery_beat.log        ;标准输出文件 loglevel=info                            ;日志的级别 </code></pre> <p>启动服务</p> <blockquote> <p>supervisord -c /path/supervisord.conf</p> </blockquote> <p>关闭服务</p> <blockquote> <p>supervisorctl shutdown</p> </blockquote> <p>查看启动的服务</p> <blockquote> <p>supervisorctl status</p> </blockquote> <p>执行结果如下</p> <pre><code>root@13107c465557:/code# supervisorctl status celery-worker RUNNING pid 234, uptime 0:00:14 celery-beat RUNNING pid 235, uptime 0:00:14 </code></pre> <p>说明启动了celery和celery-beat两个服务</p> <p>查看日志<br /> 我们在配置里面指定了./celery_worker.log 文件保存运行日志，所以可以直接查看这个文件</p> <blockquote> <p>tail -f celery_worker.log -n 30</p> </blockquote></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-68090.htm">动物防疫站***免费吗今天（动物防疫***收费吗）</a></p>
+                                        <p>下一个：<a href="/news/article-68737.htm">基于 Apache Hudi 构建增量和无限回放事件流的 OLAP 平台</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-57864.htm" title="同安宠物猫店地址（同安宠物猫店地址查询）">同安宠物猫店地址（同安宠物猫店地址查询）</a></li>
+                        <li class="py-2"><a href="/news/article-63122.htm" title="动物一针疫苗多少钱（动物疫苗多少钱一支）">动物一针疫苗多少钱（动物疫苗多少钱一支）</a></li>
+                        <li class="py-2"><a href="/news/article-38328.htm" title="沈阳卖猫的宠物店在哪（沈阳哪儿有卖猫的）">沈阳卖猫的宠物店在哪（沈阳哪儿有卖猫的）</a></li>
+                        <li class="py-2"><a href="/news/article-42784.htm" title="（九）C++对象模型和this指针基础">（九）C++对象模型和this指针基础</a></li>
+                        <li class="py-2"><a href="/news/article-44769.htm" title="养猫***多少钱一针（养猫***多少钱一针图片）">养猫***多少钱一针（养猫***多少钱一针图片）</a></li>
+                        <li class="py-2"><a href="/news/article-59577.htm" title="Missing URI template variable">Missing URI template variable</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-1-14-node-share-links.htm" title="「1月14日」最高速度19.8M/S，2025年ClashX Node每天更新免费机场节点链接地址">「1月14日」最高速度19.8M/S，2025年ClashX Node每天更新免费机场节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-39813.htm" title="上海宠物医院收费标准表最新（上海宠物医院收费标准表最新版）">上海宠物医院收费标准表最新（上海宠物医院收费标准表最新版）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-28-clash-node-daily-updates.htm" title="「2月28日」最高速度21.3M/S，2025年ClashX Node每天更新免费机场节点链接地址">「2月28日」最高速度21.3M/S，2025年ClashX Node每天更新免费机场节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-37347.htm" title="给动物注射疫苗属于主动免疫嘛（给动物接种疫苗的目的是治疗疾病）">给动物注射疫苗属于主动免疫嘛（给动物接种疫苗的目的是治疗疾病）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">21</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- customer-feedback-end -->
+    </main>
+    <!-- main-area-end -->
+        <!-- footer-area -->
+    <footer>
+        <div class="copyright-wrap">
+            <div class="container">
+                <div class="container-inner-wrap">
+                    <div class="row align-items-center">
+                        <div class="col-lg-8 col-md-9">
+                            <div class="copyright-text">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                                <p>
+                                    <a href="/">ClashX Node节点订阅官网</a> 版权所有 Powered by WordPress
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer-area-end -->
+    <!-- JS here -->
+    <script src="/assets/website/js/frontend/clashxnode/jquery-3.6.0.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/jquery.odometer.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/jquery.appear.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/slick.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/ajax-form.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/aos.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/plugins.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
