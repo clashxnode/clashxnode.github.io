@@ -1,0 +1,265 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxnode.github.io/news/article-71341.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>PyQt5 在qtdesigner中使用自定义的控件</title>
+        <meta name="description" content="文章目录  前言 1 提升控件 2 转化.ui文件为.py文件    奇奇怪怪!,虽然和我想象不一样但是还是记录一下吧！本来我以为是在QDesigner左边能显示控件可以实时拖拽，但是谁知道实际是在." />
+        <link rel="icon" href="/assets/website/img/clashxnode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="ClashX Node节点订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashxnode.github.io/news/article-71341.htm" />
+    <meta property="og:site_name" content="ClashX Node节点订阅官网" />
+    <meta property="og:title" content="PyQt5 在qtdesigner中使用自定义的控件" />
+    <meta property="og:image" content="https://clashxnode.github.io/uploads/20240904/9804d5c2949df11e8eb2646166ab3ed1.webp" />
+        <meta property="og:release_date" content="2025-03-11T07:45:59" />
+    <meta property="og:updated_time" content="2025-03-11T07:45:59" />
+        <meta property="og:description" content="文章目录  前言 1 提升控件 2 转化.ui文件为.py文件    奇奇怪怪!,虽然和我想象不一样但是还是记录一下吧！本来我以为是在QDesigner左边能显示控件可以实时拖拽，但是谁知道实际是在." />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS here -->
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/animate.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/flaticon.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/odometer.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/slick.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/default.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/style.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/responsive.css">
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="PyQt5 在qtdesigner中使用自定义的控件">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0ENMRSJ9N6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0ENMRSJ9N6');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- preloader -->
+    <div id="preloader">
+        <div id="loading-center">
+            <div class="loader">
+                <div class="loader-outter"></div>
+                <div class="loader-inner"></div>
+            </div>
+        </div>
+    </div>
+    <!-- preloader-end -->
+    <!-- Scroll-top -->
+    <button class="scroll-top scroll-to-target" data-target="html">
+        <i class="fas fa-angle-up"></i>
+    </button>
+    <!-- Scroll-top-end-->
+    <!-- header-area -->
+    <header>
+        <div id="sticky-header" class="main-header menu-area">
+            <div class="container custom-container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="mobile-nav-toggler"><i class="fas fa-bars"></i></div>
+                        <div class="menu-wrap">
+                            <nav class="menu-nav show">
+                                <div class="logo">
+                                    <a href="/">
+                                                                            <span>ClashX Node</span>
+                                    
+                                                                        </a>
+                                </div>
+                                <div class="navbar-wrap main-menu d-none d-lg-flex">
+                                    <ul class="navigation">
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </div>
+                            </nav>
+                        </div>
+                        <!-- Mobile Menu  -->
+                        <div class="mobile-menu">
+                            <nav class="menu-box">
+                                <div class="close-btn"><i class="fas fa-times"></i></div>
+                                <div class="nav-logo"><a href="/">ClashX Node</a>
+                                </div>
+                                <div class="menu-outer">
+                                    <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+                                </div>
+                                <div class="social-links">
+                                    <ul class="clearfix">
+                                        <li><a href="#"><span class="fab fa-twitter"></span></a></li>
+                                        <li><a href="#"><span class="fab fa-facebook-square"></span></a></li>
+                                        <li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
+                                        <li><a href="#"><span class="fab fa-instagram"></span></a></li>
+                                        <li><a href="#"><span class="fab fa-youtube"></span></a></li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="menu-backdrop"></div>
+                        <!-- End Mobile Menu -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-area-end -->
+    <!-- main-area -->
+    <main>
+        <!-- breadcrumb-area -->
+        <section class="breadcrumb-area breadcrumb-bg" data-background="/assets/website/img/clashxnode/bg/breadcrumb_bg.jpg">
+            <div class="container">
+                <div class="container-inner-wrap">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="breadcrumb-content">
+                                <h1 class="title">PyQt5 在qtdesigner中使用自定义的控件</h1>
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- breadcrumb-area-end -->
+        <!-- customer-feedback -->
+        <section class="customer-feedback-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                  				  				  				<div id="content_views" class="markdown_views prism-atom-one-light"> <div class="toc"> <h3>文章目录</h3> <ul> <li><a href="#_2" rel="nofollow">前言</a></li> <li><a href="#1___7" rel="nofollow">1 提升控件</a></li> <li><a href="#2__uipy_63" rel="nofollow">2 转化.ui文件为.py文件</a></li> </ul> </div> </h1> <p><strong><font color="red">奇奇怪怪!</font></strong>,虽然和我想象不一样但是还是记录一下吧！本来我以为是在QDesigner左边能显示控件可以实时拖拽，但是谁知道实际是<strong><font color="red">在.ui文件中相当于一个占位符一样理解! 转化为.py文件加载了自定义的控件类（就是类似占位替换的感觉）</font></strong>，果然python 用QDesigner太鸡肋，有这个时间拖来拖去，代码码UI都完了！！！</p> </h1> <p>打开QDesigner，创建一个QWidget，在上面拖2个QFrame,给QWidget创建一个水平布局，如下：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230119/10550dae07ecdff43161f35b2d93af03.jpg" alt="PyQt5 在qtdesigner中使用自定义的控件"></p> <p>选择一个frame右击提升窗口部件，最后点击提升，如下：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230119/78d723b371eabe4ac3fb82e65c0ae4d4.jpg" alt="PyQt5 在qtdesigner中使用自定义的控件"><br /> 提升为自定义类：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230119/2eedbcd53e9ca97cb6585502071aec04.jpg" alt="PyQt5 在qtdesigner中使用自定义的控件"><br /><img decoding="async" src="http://img.555519.xyz/uploads/20230119/74029a7721bfd65fe75bec2ea404dc79.jpg" alt="PyQt5 在qtdesigner中使用自定义的控件"><br /> 其中BoardFrame为自定义的一个控件，BoardFrame继承于QFrame.<br /> BoardFrame.py代码如下：</p> <pre><code class="prism language-python"><span class="token comment">#!/usr/bin/env python</span> <span class="token comment"># -*- coding:utf-8 -*-</span> <span class="token keyword">from</span> PyQt5<span class="token punctuation">.</span>QtWidgets <span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">from</span> PyQt5<span class="token punctuation">.</span>QtCore <span class="token keyword">import</span> pyqtSignal<span class="token punctuation">,</span>Qt<span class="token punctuation">,</span>QRegExp <span class="token keyword">from</span> PyQt5<span class="token punctuation">.</span>QtGui <span class="token keyword">import</span> QRegExpValidator <span class="token keyword">import</span> sys  <span class="token keyword">class</span> <span class="token class-name">BoardFrame</span><span class="token punctuation">(</span>QFrame<span class="token punctuation">)</span><span class="token punctuation">:</span>     <span class="token keyword">def</span> <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> <span class="token operator">*</span>argc<span class="token punctuation">,</span> <span class="token operator">**</span>argv<span class="token punctuation">)</span><span class="token punctuation">:</span>         <span class="token builtin">super</span><span class="token punctuation">(</span>BoardFrame<span class="token punctuation">,</span> self<span class="token punctuation">)</span><span class="token punctuation">.</span>__init__<span class="token punctuation">(</span><span class="token operator">*</span>argc<span class="token punctuation">,</span> <span class="token operator">**</span>argv<span class="token punctuation">)</span>         self<span class="token punctuation">.</span>setFixedSize<span class="token punctuation">(</span><span class="token number">200</span><span class="token punctuation">,</span><span class="token number">500</span><span class="token punctuation">)</span>         self<span class="token punctuation">.</span>mainlayout <span class="token operator">=</span> QVBoxLayout<span class="token punctuation">(</span>self<span class="token punctuation">)</span>         self<span class="token punctuation">.</span>name <span class="token operator">=</span> QLabel<span class="token punctuation">(</span><span class="token string">"名字"</span><span class="token punctuation">)</span>         self<span class="token punctuation">.</span>name<span class="token punctuation">.</span>setFrameStyle<span class="token punctuation">(</span>QFrame<span class="token punctuation">.</span>Box <span class="token operator">|</span> QFrame<span class="token punctuation">.</span>Plain<span class="token punctuation">)</span>         self<span class="token punctuation">.</span>name<span class="token punctuation">.</span>setAlignment<span class="token punctuation">(</span>Qt<span class="token punctuation">.</span>AlignCenter<span class="token punctuation">)</span>         self<span class="token punctuation">.</span>mainlayout<span class="token punctuation">.</span>addWidget<span class="token punctuation">(</span>self<span class="token punctuation">.</span>name <span class="token punctuation">)</span>         self<span class="token punctuation">.</span>frame <span class="token operator">=</span> QFrame<span class="token punctuation">(</span>self<span class="token punctuation">)</span>         self<span class="token punctuation">.</span>mainlayout<span class="token punctuation">.</span>addWidget<span class="token punctuation">(</span>self<span class="token punctuation">.</span>frame<span class="token punctuation">)</span>         frame_layout <span class="token operator">=</span> QVBoxLayout<span class="token punctuation">(</span>self<span class="token punctuation">.</span>frame<span class="token punctuation">)</span>         <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token builtin">range</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">:</span>             btn <span class="token operator">=</span> QCheckBox<span class="token punctuation">(</span><span class="token string">"按钮%d "</span> <span class="token operator">%</span> <span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span>             frame_layout<span class="token punctuation">.</span>addWidget<span class="token punctuation">(</span>btn<span class="token punctuation">)</span>             frame_layout<span class="token punctuation">.</span>setContentsMargins<span class="token punctuation">(</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span>             <span class="token keyword">if</span> <span class="token punctuation">(</span>i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">8</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">:</span>                 frame01 <span class="token operator">=</span> QFrame<span class="token punctuation">(</span>self<span class="token punctuation">.</span>frame<span class="token punctuation">)</span>                 frame01<span class="token punctuation">.</span>setFrameStyle<span class="token punctuation">(</span>QFrame<span class="token punctuation">.</span>HLine <span class="token operator">|</span> QFrame<span class="token punctuation">.</span>Plain<span class="token punctuation">)</span>                 frame_layout<span class="token punctuation">.</span>addWidget<span class="token punctuation">(</span>frame01<span class="token punctuation">)</span>         <span class="token comment">#</span>         childlayout <span class="token operator">=</span> QHBoxLayout<span class="token punctuation">(</span><span class="token punctuation">)</span>         clear_btn <span class="token operator">=</span> QPushButton<span class="token punctuation">(</span><span class="token string">"全部取消"</span><span class="token punctuation">)</span>         set_btn <span class="token operator">=</span> QPushButton<span class="token punctuation">(</span><span class="token string">"全部勾选"</span><span class="token punctuation">)</span>         childlayout<span class="token punctuation">.</span>addWidget<span class="token punctuation">(</span>clear_btn<span class="token punctuation">)</span>         childlayout<span class="token punctuation">.</span>addWidget<span class="token punctuation">(</span>set_btn<span class="token punctuation">)</span>         self<span class="token punctuation">.</span>mainlayout<span class="token punctuation">.</span>addLayout<span class="token punctuation">(</span>childlayout<span class="token punctuation">)</span>         <span class="token comment">##边框</span>         self<span class="token punctuation">.</span>frame<span class="token punctuation">.</span>setFrameStyle<span class="token punctuation">(</span>QFrame<span class="token punctuation">.</span>Box <span class="token operator">|</span> QFrame<span class="token punctuation">.</span>Plain<span class="token punctuation">)</span>          <span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>     app <span class="token operator">=</span> QApplication<span class="token punctuation">(</span>sys<span class="token punctuation">.</span>argv<span class="token punctuation">)</span>     win <span class="token operator">=</span> BoardFrame<span class="token punctuation">(</span><span class="token punctuation">)</span>     win<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>     sys<span class="token punctuation">.</span>exit<span class="token punctuation">(</span>app<span class="token punctuation">.</span>exec_<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> </code></pre> </h1> <p>保存ui文件为test.ui,然后转化为.py文件 <font color="red" size="6">pyuic5 -o test.py test.ui</font><br /> 将BoardFrame.py 和 test.py文件放到同级目录。</p> <pre><code class="prism language-python"><span class="token comment"># -*- coding: utf-8 -*-</span>  <span class="token comment"># Form implementation generated from reading ui file 'test.ui'</span> <span class="token comment">#</span> <span class="token comment"># Created by: PyQt5 UI code generator 5.15.2</span> <span class="token comment">#</span> <span class="token comment"># WARNING: Any manual changes made to this file will be lost when pyuic5 is</span> <span class="token comment"># run again.  Do not edit this file unless you know what you are doing.</span>   <span class="token keyword">from</span> PyQt5 <span class="token keyword">import</span> QtCore<span class="token punctuation">,</span> QtGui<span class="token punctuation">,</span> QtWidgets <span class="token keyword">from</span> BoardFrame <span class="token keyword">import</span> BoardFrame   <span class="token keyword">class</span> <span class="token class-name">Ui_Form</span><span class="token punctuation">(</span><span class="token builtin">object</span><span class="token punctuation">)</span><span class="token punctuation">:</span>     <span class="token keyword">def</span> <span class="token function">setupUi</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> Form<span class="token punctuation">)</span><span class="token punctuation">:</span>         Form<span class="token punctuation">.</span>setObjectName<span class="token punctuation">(</span><span class="token string">"Form"</span><span class="token punctuation">)</span>         Form<span class="token punctuation">.</span>resize<span class="token punctuation">(</span><span class="token number">400</span><span class="token punctuation">,</span> <span class="token number">600</span><span class="token punctuation">)</span>         self<span class="token punctuation">.</span>horizontalLayout <span class="token operator">=</span> QtWidgets<span class="token punctuation">.</span>QHBoxLayout<span class="token punctuation">(</span>Form<span class="token punctuation">)</span>         self<span class="token punctuation">.</span>horizontalLayout<span class="token punctuation">.</span>setObjectName<span class="token punctuation">(</span><span class="token string">"horizontalLayout"</span><span class="token punctuation">)</span>         self<span class="token punctuation">.</span>frame <span class="token operator">=</span> BoardFrame<span class="token punctuation">(</span>Form<span class="token punctuation">)</span>         self<span class="token punctuation">.</span>frame<span class="token punctuation">.</span>setFrameShape<span class="token punctuation">(</span>QtWidgets<span class="token punctuation">.</span>QFrame<span class="token punctuation">.</span>StyledPanel<span class="token punctuation">)</span>         self<span class="token punctuation">.</span>frame<span class="token punctuation">.</span>setFrameShadow<span class="token punctuation">(</span>QtWidgets<span class="token punctuation">.</span>QFrame<span class="token punctuation">.</span>Raised<span class="token punctuation">)</span>         self<span class="token punctuation">.</span>frame<span class="token punctuation">.</span>setObjectName<span class="token punctuation">(</span><span class="token string">"frame"</span><span class="token punctuation">)</span>         self<span class="token punctuation">.</span>horizontalLayout<span class="token punctuation">.</span>addWidget<span class="token punctuation">(</span>self<span class="token punctuation">.</span>frame<span class="token punctuation">)</span>         self<span class="token punctuation">.</span>frame_2 <span class="token operator">=</span> BoardFrame<span class="token punctuation">(</span>Form<span class="token punctuation">)</span>         self<span class="token punctuation">.</span>frame_2<span class="token punctuation">.</span>setFrameShape<span class="token punctuation">(</span>QtWidgets<span class="token punctuation">.</span>QFrame<span class="token punctuation">.</span>StyledPanel<span class="token punctuation">)</span>         self<span class="token punctuation">.</span>frame_2<span class="token punctuation">.</span>setFrameShadow<span class="token punctuation">(</span>QtWidgets<span class="token punctuation">.</span>QFrame<span class="token punctuation">.</span>Raised<span class="token punctuation">)</span>         self<span class="token punctuation">.</span>frame_2<span class="token punctuation">.</span>setObjectName<span class="token punctuation">(</span><span class="token string">"frame_2"</span><span class="token punctuation">)</span>         self<span class="token punctuation">.</span>horizontalLayout<span class="token punctuation">.</span>addWidget<span class="token punctuation">(</span>self<span class="token punctuation">.</span>frame_2<span class="token punctuation">)</span>          self<span class="token punctuation">.</span>retranslateUi<span class="token punctuation">(</span>Form<span class="token punctuation">)</span>         QtCore<span class="token punctuation">.</span>QMetaObject<span class="token punctuation">.</span>connectSlotsByName<span class="token punctuation">(</span>Form<span class="token punctuation">)</span>      <span class="token keyword">def</span> <span class="token function">retranslateUi</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> Form<span class="token punctuation">)</span><span class="token punctuation">:</span>         _translate <span class="token operator">=</span> QtCore<span class="token punctuation">.</span>QCoreApplication<span class="token punctuation">.</span>translate         Form<span class="token punctuation">.</span>setWindowTitle<span class="token punctuation">(</span>_translate<span class="token punctuation">(</span><span class="token string">"Form"</span><span class="token punctuation">,</span> <span class="token string">"Form"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment">#上面为工具转化的代码，下面为我们自己添加的测试</span> <span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>     <span class="token keyword">import</span> sys     app <span class="token operator">=</span> QtWidgets<span class="token punctuation">.</span>QApplication<span class="token punctuation">(</span>sys<span class="token punctuation">.</span>argv<span class="token punctuation">)</span>     widget <span class="token operator">=</span> QtWidgets<span class="token punctuation">.</span>QWidget<span class="token punctuation">(</span><span class="token punctuation">)</span>     <span class="token comment">#widget.setStyleSheet("background-color:red;")</span>     widget<span class="token punctuation">.</span>show<span class="token punctuation">(</span><span class="token punctuation">)</span>     test <span class="token operator">=</span> Ui_Form<span class="token punctuation">(</span><span class="token punctuation">)</span>     test<span class="token punctuation">.</span>setupUi<span class="token punctuation">(</span>widget<span class="token punctuation">)</span>     sys<span class="token punctuation">.</span>exit<span class="token punctuation">(</span>app<span class="token punctuation">.</span>exec_<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  </code></pre> <p>效果如下：<br /><img decoding="async" src="http://img.555519.xyz/uploads/20230119/7abd8abf31077cf62443d6f4ef6d0ab8.jpg" alt="PyQt5 在qtdesigner中使用自定义的控件"></p> </p></div> 			                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-70684.htm">国内宠物粮生产厂家有哪些 国内宠物粮生产厂家有哪些品牌</a></p>
+                                        <p>下一个：<a href="/news/article-71342.htm">流浪狗领养小程序（领养流浪狗要办什么手续）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/free-nodes/2025-1-20-node-share-links.htm" title="「1月20日」最高速度21.8M/S，2025年ClashX Node每天更新免费机场节点链接地址">「1月20日」最高速度21.8M/S，2025年ClashX Node每天更新免费机场节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-55611.htm" title="动物医院要求什么学历才能进去（动物医院挣钱吗）">动物医院要求什么学历才能进去（动物医院挣钱吗）</a></li>
+                        <li class="py-2"><a href="/news/article-46746.htm" title="国内宠物品牌进口粮回收（国内宠物品牌进口粮回收）">国内宠物品牌进口粮回收（国内宠物品牌进口粮回收）</a></li>
+                        <li class="py-2"><a href="/news/article-58581.htm" title="南平市宠物店有哪些（南平宠物狗南平宠物狗信息）">南平市宠物店有哪些（南平宠物狗南平宠物狗信息）</a></li>
+                        <li class="py-2"><a href="/news/article-43782.htm" title="如何在Web前端实现CAD图文字全文搜索功能之技术分享">如何在Web前端实现CAD图文字全文搜索功能之技术分享</a></li>
+                        <li class="py-2"><a href="/news/article-51822.htm" title="南京宠物猫领养中心地址电话号码（南京猫咪领养中心在哪里）">南京宠物猫领养中心地址电话号码（南京猫咪领养中心在哪里）</a></li>
+                        <li class="py-2"><a href="/news/article-57864.htm" title="同安宠物猫店地址（同安宠物猫店地址查询）">同安宠物猫店地址（同安宠物猫店地址查询）</a></li>
+                        <li class="py-2"><a href="/news/article-50758.htm" title="厦门领养宠物猫中心地址电话（厦门猫咪领养中心）">厦门领养宠物猫中心地址电话（厦门猫咪领养中心）</a></li>
+                        <li class="py-2"><a href="/news/article-61926.htm" title="动物医院大众点评评语怎么写啊 动物医院大众点评评语怎么写啊英语">动物医院大众点评评语怎么写啊 动物医院大众点评评语怎么写啊英语</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-2-11-clash-node-github.htm" title="「2月11日」最高速度19.7M/S，2025年ClashX Node每天更新免费机场节点链接地址">「2月11日」最高速度19.7M/S，2025年ClashX Node每天更新免费机场节点链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">38</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-02/" title="2025-02 归档">2025-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">84</span> <a href="/date/2025-01/" title="2025-01 归档">2025-01</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- customer-feedback-end -->
+    </main>
+    <!-- main-area-end -->
+        <!-- footer-area -->
+    <footer>
+        <div class="copyright-wrap">
+            <div class="container">
+                <div class="container-inner-wrap">
+                    <div class="row align-items-center">
+                        <div class="col-lg-8 col-md-9">
+                            <div class="copyright-text">
+                    <p>
+                        <a href="/">首页</a> | 
+                        <a href="/free-node/">免费节点</a> | 
+                        <a href="/news/">新闻资讯</a> |
+                        <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                                <p>
+                                    <a href="/">ClashX Node节点订阅官网</a> 版权所有 Powered by WordPress
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer-area-end -->
+    <!-- JS here -->
+    <script src="/assets/website/js/frontend/clashxnode/jquery-3.6.0.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/jquery.odometer.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/jquery.appear.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/slick.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/ajax-form.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/aos.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/plugins.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
