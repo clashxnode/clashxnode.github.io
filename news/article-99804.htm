@@ -1,0 +1,267 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxnode.github.io/news/article-99804.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>mysql 外连接 内连接 自连接 ,自然连接,交叉连接</title>
+        <meta name="description" content="自连接(最特殊) 将同一张表 查询 xx的名字，和上级的名 而同一行的记录中没有上级的名字只有上级的编号  例子: 查询改员工的员工名字 以及直接上级的名字  结果:   -- 小结： 1 一张表当做" />
+        <link rel="icon" href="/assets/website/img/clashxnode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="ClashX Node节点订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashxnode.github.io/news/article-99804.htm" />
+    <meta property="og:site_name" content="ClashX Node节点订阅官网" />
+    <meta property="og:title" content="mysql 外连接 内连接 自连接 ,自然连接,交叉连接" />
+    <meta property="og:image" content="https://clashxnode.github.io/uploads/20240904/9ca54a635850960dd863a167a2cc4f74.webp" />
+        <meta property="og:release_date" content="2025-04-20T09:01:15" />
+    <meta property="og:updated_time" content="2025-04-20T09:01:15" />
+        <meta property="og:description" content="自连接(最特殊) 将同一张表 查询 xx的名字，和上级的名 而同一行的记录中没有上级的名字只有上级的编号  例子: 查询改员工的员工名字 以及直接上级的名字  结果:   -- 小结： 1 一张表当做" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS here -->
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/animate.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/flaticon.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/odometer.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/slick.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/default.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/style.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/responsive.css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="mysql 外连接 内连接 自连接 ,自然连接,交叉连接">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0ENMRSJ9N6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0ENMRSJ9N6');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- preloader -->
+    <div id="preloader">
+        <div id="loading-center">
+            <div class="loader">
+                <div class="loader-outter"></div>
+                <div class="loader-inner"></div>
+            </div>
+        </div>
+    </div>
+    <!-- preloader-end -->
+    <!-- Scroll-top -->
+    <button class="scroll-top scroll-to-target" data-target="html">
+        <i class="fas fa-angle-up"></i>
+    </button>
+    <!-- Scroll-top-end-->
+    <!-- header-area -->
+    <header>
+        <div id="sticky-header" class="main-header menu-area">
+            <div class="container custom-container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="mobile-nav-toggler"><i class="fas fa-bars"></i></div>
+                        <div class="menu-wrap">
+                            <nav class="menu-nav show">
+                                <div class="logo">
+                                    <a href="/">
+                                                                            <span>ClashX Node</span>
+                                    
+                                                                        </a>
+                                </div>
+                                <div class="navbar-wrap main-menu d-none d-lg-flex">
+                                    <ul class="navigation">
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </div>
+                            </nav>
+                        </div>
+                        <!-- Mobile Menu  -->
+                        <div class="mobile-menu">
+                            <nav class="menu-box">
+                                <div class="close-btn"><i class="fas fa-times"></i></div>
+                                <div class="nav-logo"><a href="/">ClashX Node</a>
+                                </div>
+                                <div class="menu-outer">
+                                    <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+                                </div>
+                                <div class="social-links">
+                                    <ul class="clearfix">
+                                        <li><a href="#"><span class="fab fa-twitter"></span></a></li>
+                                        <li><a href="#"><span class="fab fa-facebook-square"></span></a></li>
+                                        <li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
+                                        <li><a href="#"><span class="fab fa-instagram"></span></a></li>
+                                        <li><a href="#"><span class="fab fa-youtube"></span></a></li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="menu-backdrop"></div>
+                        <!-- End Mobile Menu -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-area-end -->
+    <!-- main-area -->
+    <main>
+        <!-- breadcrumb-area -->
+        <section class="breadcrumb-area breadcrumb-bg" data-background="/assets/website/img/clashxnode/bg/breadcrumb_bg.jpg">
+            <div class="container">
+                <div class="container-inner-wrap">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="breadcrumb-content">
+                                <h1 class="title">mysql 外连接 内连接 自连接 ,自然连接,交叉连接</h1>
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- breadcrumb-area-end -->
+        <!-- customer-feedback -->
+        <section class="customer-feedback-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                <div class="xcblog-blog-detail">
+                      				  				  				<div id="content_views" class="htmledit_views"> <ul> <li><span style="color:#b95514;"><strong>自连接</strong></span>(最特殊)</li> <li>将同一张表</li> <li>查询 xx的名字，和上级的名</li> <li>而同一行的记录中没有上级的名字只有上级的编号</li> </ul> <p>例子: 查询改员工的员工名字 以及直接上级的名字</p> <p><img fetchpriority="high" decoding="async" alt="" height="281" src="http://img.555519.xyz/uploads/20221113/8be216c8617660b613a106185ad453f2.jpg"></p> <p>结果:</p> <p><img decoding="async" alt="" height="281" src="http://img.555519.xyz/uploads/20221113/216503f8f275a988d08f981ac046c0c9.jpg"></p> <ul> <li>-- 小结： 1 一张表当做两张表来使用</li> <li>-- 2.需要取别名(表分别取别名)再加筛选条件 where 员工.mgr指向上级的编号</li> <li>-- 3列名不明确，可以给列取别名</li> </ul> <p><span style="color:#b95514;"><strong>内连接</strong></span></p> <p>例题:&nbsp; &nbsp;找出学生表与成绩表中都存在的学生信息</p> <p><img decoding="async" alt="" height="212" src="http://img.555519.xyz/uploads/20221113/05dd7fa9a5724239edd348673939dc2b.jpg"></p> <p>内连接，如果用学生id 来连接,就是找出时存在与两张表中的i学生d，然后就可以选择性地展示这些学生id后面的数据</p> <p>1. 行数据: 通过&nbsp; where 语句来筛选要展示</p> <p>2，列数据: 通过select 来选择展示字段</p> <p>感觉跟 select&nbsp; *&nbsp; from&nbsp; &nbsp;biao 1 biao2&nbsp; where&nbsp; &nbsp;biao1.xx=biao2.xx&nbsp; &nbsp;查不多只是性能上有不同</p> <p>仅供参考:额&nbsp; &nbsp;(where先合并再过滤条件,on是先过滤条件再合并！？)</p> <blockquote> <p>&nbsp; -- 感觉也是把两张表连起来(普通多表查询与内连接区别)</p> <p> &nbsp; &nbsp; &nbsp; -- 区别 &nbsp;： &nbsp;on是先筛选后关联，优先级高，所以先做hash筛选匹配,再两张表合并<br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;-- &nbsp;where 是先关联合并表后&nbsp; &nbsp;筛选匹配(量大),<br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;-- &nbsp;on指匹配到一条需要的记录后就结束，其他的不匹配，然后合并表，<br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;-- 而where的会一直匹配直到结束，再合并表</p> <p> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;-- &nbsp;on 匹配到相同的数据 -&gt; &nbsp; join (合并) &nbsp;-&gt; &nbsp;select查询<br /> &nbsp; &nbsp; &nbsp; &nbsp; -- &nbsp;合并biao1,biao2 , &nbsp; &nbsp;--&gt;where 对合并的所以信息筛选 --&gt;select 查询<br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;-- on 效率高 &nbsp; &nbsp;先hash，后合并，效率 &nbsp;0 logN<br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;-- where 效率低: &nbsp;多个from笛卡尔集 合并 再筛选 &nbsp;0(n^2)</p> </blockquote> <p>例题:&nbsp; &nbsp; &nbsp;&nbsp;查询程维的订单数量</p> <p>&nbsp; &nbsp; 普通笛卡尔积多表查询:</p> <pre><code>&nbsp; SELECT &nbsp;SUM(数量)FROM &nbsp;销售表,员工信息 WHERE &nbsp;销售表.员工工号 &nbsp;= 员工信息.工号&nbsp; &nbsp; AND 员工信息.姓名="程维"</code></pre> <p>&nbsp; &nbsp;内连接join</p> <pre><code>&nbsp;SELECT SUM(数量) FROM &nbsp;员工信息 JOIN 销售表 &nbsp;ON &nbsp;员工信息.工号=销售表.员工工号 &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; WHERE 姓名="程维"</code></pre> <ul> <li> <h2><span style="color:#b95514;"><strong>外连接</strong></span></h2> </li> <li><span style="color:#b95514;"><strong>左外连接</strong></span>(如果左侧的表完全显示【左侧的表即使某些字段的记录没有与另外一个表字段关联也会显示】)</li> <li><strong><span style="color:#b95514;">右外连接同理</span></strong></li> </ul> <p><strong><span style="color:#b95514;">&nbsp;全外连接 :</span></strong>结果表中除了满足连接条件的行外，还包括两个表的所有行(单行所有记录重复的去重)</p> <p>&nbsp;例子:</p> <p>准备两张简单的表&nbsp; &nbsp;-- m2表 &nbsp;学生的id &nbsp; 学生的分数&nbsp; &nbsp; -- m1表 &nbsp; 学生的id &nbsp; 学生num绩点</p> <p><img loading="lazy" decoding="async" alt="" height="366" src="http://img.555519.xyz/uploads/20221113/c3551cbfa0714680ef6aec445fcc591a.jpg"></p> <p><strong>左连接</strong> 测试:&nbsp; &nbsp; &nbsp;没有分数的学生的id也显示出来了</p> <pre><code>&nbsp; SELECT &nbsp;* &nbsp;FROM &nbsp;m1 LEFT JOIN m2 ON m1.id=m2.id</code></pre> <p><img loading="lazy" decoding="async" alt="" height="267" src="http://img.555519.xyz/uploads/20221113/67522ffc785c951817f665c7453afb15.jpg"></p> <p><strong>右测试</strong>:&nbsp; &nbsp;没有绩点的的学生的id也显示出来</p> <p><img loading="lazy" decoding="async" alt="" height="262" src="http://img.555519.xyz/uploads/20221113/00d83468fff2b6f5b67bafc33a98880a.jpg"></p> <p><span style="color:#fe2c24;"><strong>全外连接</strong></span>: 目前mysql&nbsp; 有这种说发&nbsp; &nbsp;x biao&nbsp; full&nbsp; join&nbsp; y biao&nbsp; &nbsp;但是现在不支持这种写法了，可以用union 联合查询</p> <pre><code> SELECT  *  FROM  m1 LEFT JOIN m2 ON m1.id=m2.id  -- m2 没有分数的学生id也显示出来      UNION       SELECT  *  FROM  m1 RIGHT JOIN m2 ON m1.id=m2.id -- m1 没有绩点的的学生的id也显示出来</code></pre> <p><img loading="lazy" decoding="async" alt="" height="207" src="http://img.555519.xyz/uploads/20221113/cc676557ae474cd37daf6816dc648bde.jpg"></p> <p>&nbsp; ps :这里可以再测试一下&nbsp; union&nbsp; all 的区别</p> <p><img loading="lazy" decoding="async" alt="" height="372" src="http://img.555519.xyz/uploads/20221113/66a89d368bb8bf528f117d62eb80cce6.jpg"></p> <p><strong>可以发现union all 会在全外连接的基础删，对表中记录完全相同的记录也会重复显示</strong></p> <p><strong><span style="color:#b95514;">交叉连接</span></strong></p> <blockquote> <p>交叉连接（又名笛卡尔积）<br /> 首先，先简单解释一下笛卡尔积。</p> <p> 有两个集合A和B，A&nbsp;=&nbsp;{0,1}&nbsp;B&nbsp;=&nbsp;{2,3,4}</p> <p> 集合&nbsp;A×B&nbsp;和&nbsp;B×A的结果集就可以分别表示为以下这种形式：</p> <p> A×B&nbsp;=&nbsp;{（0，2），（1，2），（0，3），（1，3），（0，4），（1，4）}；<br /> B×A&nbsp;=&nbsp;{（2，0），（2，1），（3，0），（3，1），（4，0），（4，1）}；<br /> 以上A×B和B×A的结果就可以叫做两个集合相乘的‘笛卡尔积’。</p> <p> 从以上的数据分析我们可以得出以下两点结论：</p> <p> 两个集合相乘，不满足交换率，既&nbsp;A×B&nbsp;≠&nbsp;B×A;&nbsp;A集合和B集合相乘，包含了集合A中元素和集合B中元素相结合的所有的可能性，即两个集合相乘得到的新集合的元素个数是&nbsp;A集合的元素个数&nbsp;×&nbsp;B集合的元素个数。</p> </blockquote> <blockquote> <p> 交叉连接：</p> <p> SELECT&nbsp;*&nbsp;from&nbsp;表1&nbsp;JOIN&nbsp;表2；<br /> 交叉连接实际上是将两个表进行笛卡尔积运算，结果表是由第一个表的每一行与第二个表的每一行拼接后形成的表，称为‘笛卡尔积表’，结果表的行数等于两个表的行数之积。</p> <p> 如果两张表的数据量都比较大的话，那样就会占用很大的内存空间这显然是不合理的。所以，我们在进行表连接查询的时候一般都会使用JOIN&nbsp;xxx&nbsp;ON&nbsp;xxx的语法，ON语句的执行是在JOIN语句之前的，也就是说两张表数据行之间进行匹配的时候，会先判断数据行是否符合ON语句后面的条件，再决定是否JOIN。</p> <p> 因此，有一个显而易见的SQL优化的方案是，当两张表的数据量比较大，又需要连接查询时，应该使用&nbsp;FROM&nbsp;table1&nbsp;JOIN&nbsp;table2&nbsp;ON&nbsp;xxx的语法，避免使用&nbsp;FROM&nbsp;table1,table2&nbsp;WHERE&nbsp;xxx&nbsp;的语法，因为后者会在内存中先生成一张数据量比较大的笛卡尔积表，增加了内存的开销。</p> </blockquote> <p><span style="color:#b95514;"><strong>自然连接</strong></span></p> <p>&nbsp;-- &nbsp;自然 内、外 连接(自然连接)</p> <blockquote> <p> &nbsp; &nbsp; &nbsp; -- 自然内连接(就是我们平时用的最多的两张表合并，做笛卡尔积)<br /> &nbsp; &nbsp; &nbsp; -- &nbsp;(只不过它已经自动帮我们匹配等连接条件)</p> </blockquote> <p> &nbsp; &nbsp; &nbsp; SELECT &nbsp;* &nbsp;FROM &nbsp;USER NATURAL JOIN score</p> <blockquote> <p> &nbsp; &nbsp; &nbsp; -- ps: &nbsp;与内连接 &nbsp; &nbsp; (inner) join &nbsp; 只是换了一个单词<br /> &nbsp; &nbsp; &nbsp; -- &nbsp;自然连接的特别之处就是自动帮我们匹配了等连接</p> </blockquote> <p> &nbsp; &nbsp; &nbsp; -- &nbsp;自然外连接同理</p> <p></p> <p>作为学习笔记只是参数昂</p> </div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-99033.htm">成都哪里有宠物领养中心（成都哪里可以领养宠物）</a></p>
+                                        <p>下一个：<a href="/news/article-99805.htm">Java 常见的限流算法详细分析并实现_java</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-72650.htm" title="领养宠物狗狗多少钱一个（领养一只宠物狗多少钱啊）">领养宠物狗狗多少钱一个（领养一只宠物狗多少钱啊）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-22-free-node-subscribe.htm" title="「3月22日」最高速度19M/S，2025年ClashX Node每天更新免费机场节点链接地址">「3月22日」最高速度19M/S，2025年ClashX Node每天更新免费机场节点链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-14-node-share-links.htm" title="「3月14日」最高速度22.2M/S，2025年ClashX Node每天更新免费机场节点链接地址">「3月14日」最高速度22.2M/S，2025年ClashX Node每天更新免费机场节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-78064.htm" title="宠爱动物诊所怎么样（宠爱宠物诊疗中心）">宠爱动物诊所怎么样（宠爱宠物诊疗中心）</a></li>
+                        <li class="py-2"><a href="/news/article-90138.htm" title="c语言-字符串旋转">c语言-字符串旋转</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-14-clash-windows.htm" title="「4月14日」最高速度18.4M/S，2025年ClashX Node每天更新免费机场节点链接地址">「4月14日」最高速度18.4M/S，2025年ClashX Node每天更新免费机场节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-86481.htm" title="python神经网络tf.name_scope和tf.variable_scope函数区别_python">python神经网络tf.name_scope和tf.variable_scope函数区别_python</a></li>
+                        <li class="py-2"><a href="/news/article-73988.htm" title="狗狗有偿领养协议怎么写（狗狗领养协议书有没有法律效益）">狗狗有偿领养协议怎么写（狗狗领养协议书有没有法律效益）</a></li>
+                        <li class="py-2"><a href="/news/article-88648.htm" title="宠物粮网店名字大全四个字（宠物粮取名）">宠物粮网店名字大全四个字（宠物粮取名）</a></li>
+                        <li class="py-2"><a href="/news/article-73313.htm" title="SpringBoot下载Excel文件，解决文件损坏问题">SpringBoot下载Excel文件，解决文件损坏问题</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">58</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">88</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- customer-feedback-end -->
+    </main>
+    <!-- main-area-end -->
+        <!-- footer-area -->
+    <footer>
+        <div class="copyright-wrap">
+            <div class="container">
+                <div class="container-inner-wrap">
+                    <div class="row align-items-center">
+                        <div class="col-lg-8 col-md-9">
+                            <div class="copyright-text">
+                                                    <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                                <p>
+                                    <a href="/">ClashX Node节点订阅官网</a> 版权所有 Powered by WordPress
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer-area-end -->
+    <!-- JS here -->
+    <script src="/assets/website/js/frontend/clashxnode/jquery-3.6.0.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/jquery.odometer.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/jquery.appear.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/slick.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/ajax-form.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/aos.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/plugins.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
