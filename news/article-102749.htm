@@ -1,0 +1,267 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxnode.github.io/news/article-102749.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>JavaScript中的多种进制与进制转换_在线工具</title>
+        <meta name="description" content="进制介绍 JavaScript 中提供的进制表示方法有四种：十进制、二进制、十六进制、八进制。 对于数值字面量，主要使用不同的前缀来区分：  十进制(Decimal)： 取值数字 0-9；不用前缀。 " />
+        <link rel="icon" href="/assets/website/img/clashxnode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="ClashX Node节点订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashxnode.github.io/news/article-102749.htm" />
+    <meta property="og:site_name" content="ClashX Node节点订阅官网" />
+    <meta property="og:title" content="JavaScript中的多种进制与进制转换_在线工具" />
+    <meta property="og:image" content="https://clashxnode.github.io/uploads/20240904/623efb25da1431b019817985fd7006e6.webp" />
+        <meta property="og:release_date" content="2025-04-24T09:15:58" />
+    <meta property="og:updated_time" content="2025-04-24T09:15:58" />
+        <meta property="og:description" content="进制介绍 JavaScript 中提供的进制表示方法有四种：十进制、二进制、十六进制、八进制。 对于数值字面量，主要使用不同的前缀来区分：  十进制(Decimal)： 取值数字 0-9；不用前缀。 " />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS here -->
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/animate.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/flaticon.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/odometer.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/slick.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/default.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/style.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/responsive.css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="JavaScript中的多种进制与进制转换_在线工具">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0ENMRSJ9N6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0ENMRSJ9N6');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- preloader -->
+    <div id="preloader">
+        <div id="loading-center">
+            <div class="loader">
+                <div class="loader-outter"></div>
+                <div class="loader-inner"></div>
+            </div>
+        </div>
+    </div>
+    <!-- preloader-end -->
+    <!-- Scroll-top -->
+    <button class="scroll-top scroll-to-target" data-target="html">
+        <i class="fas fa-angle-up"></i>
+    </button>
+    <!-- Scroll-top-end-->
+    <!-- header-area -->
+    <header>
+        <div id="sticky-header" class="main-header menu-area">
+            <div class="container custom-container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="mobile-nav-toggler"><i class="fas fa-bars"></i></div>
+                        <div class="menu-wrap">
+                            <nav class="menu-nav show">
+                                <div class="logo">
+                                    <a href="/">
+                                                                            <span>ClashX Node</span>
+                                    
+                                                                        </a>
+                                </div>
+                                <div class="navbar-wrap main-menu d-none d-lg-flex">
+                                    <ul class="navigation">
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </div>
+                            </nav>
+                        </div>
+                        <!-- Mobile Menu  -->
+                        <div class="mobile-menu">
+                            <nav class="menu-box">
+                                <div class="close-btn"><i class="fas fa-times"></i></div>
+                                <div class="nav-logo"><a href="/">ClashX Node</a>
+                                </div>
+                                <div class="menu-outer">
+                                    <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+                                </div>
+                                <div class="social-links">
+                                    <ul class="clearfix">
+                                        <li><a href="#"><span class="fab fa-twitter"></span></a></li>
+                                        <li><a href="#"><span class="fab fa-facebook-square"></span></a></li>
+                                        <li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
+                                        <li><a href="#"><span class="fab fa-instagram"></span></a></li>
+                                        <li><a href="#"><span class="fab fa-youtube"></span></a></li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="menu-backdrop"></div>
+                        <!-- End Mobile Menu -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-area-end -->
+    <!-- main-area -->
+    <main>
+        <!-- breadcrumb-area -->
+        <section class="breadcrumb-area breadcrumb-bg" data-background="/assets/website/img/clashxnode/bg/breadcrumb_bg.jpg">
+            <div class="container">
+                <div class="container-inner-wrap">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="breadcrumb-content">
+                                <h1 class="title">JavaScript中的多种进制与进制转换_在线工具</h1>
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- breadcrumb-area-end -->
+        <!-- customer-feedback -->
+        <section class="customer-feedback-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                <div class="xcblog-blog-detail">
+                      				  				  				<h2 id="进制介绍">进制介绍</h2> <p><code>JavaScript</code> 中提供的进制表示方法有四种：十进制、二进制、十六进制、八进制。<br /> 对于数值字面量，主要使用不同的前缀来区分：</p> <ul> <li>十进制(Decimal)：<br /> 取值数字 <code>0-9</code>；不用前缀。</li> <li>二进制(Binary)：<br /> 取值数字 <code>0</code> 和 <code>1</code> ；前缀 <code>0b</code> 或 <code>0B</code>。</li> <li>十六进制(Hexadecimal)：<br /> 取值数字 <code>0-9</code> 和 <code>a-f</code> ；前缀 <code>0x</code> 或 <code>0X</code>。</li> <li>八进制(Octal)：<br /> 取值数字 <code>0-7</code> ；前缀 <code>0o</code> 或 <code>0O</code> (ES6规定)。</li> </ul> <blockquote> <p>需要注意的是，非严格模式下浏览器支持：如果有前缀0并且后面只用到 <code>0-7</code> 八个数字的数值时，该数值视为八进制；但如果前缀0后面跟随的数字中有8或者9，则视为十进制。<br /> 严格模式下，如果数字加前缀0，则报错：Uncaught SyntaxError: Decimals with leading zeros are not allowed in strict mode。<br /> 各进制的数值，如果取值数字超过给定的范围，则会报错：Uncaught SyntaxError: Invalid or unexpected token。</p> </blockquote> <p>在JavaScript内部的默认情况下，二进制、十六进制、八进制字面量数值，都会自动转为十进制进行运算。</p> <pre><code class="language-js">0x22 // 34 0b111 // 7 0o33 // 27 0x22 + 0b111 // 41 0o33 + 12 // 39 (0x33).toString() // 51 (0x33).valueOf() // 51 </code></pre> <p>除了十进制是Javascript默认的数字进制以外，其他三种进制方式平时使用较少，主要在处理底层数据、字节编码或者位运算等时候才会碰到。</p> <h2 id="进制转换">进制转换</h2> <p>本文将主要讨论进制转换时的问题。<br /> JavaScript 提供了原生函数，进行十进制与其他各进制之间的相互转换。<br /> 其中，从其他进制转换成十进制，有三种方式：<code>parseInt()</code>，<code>Number()</code>，<code>+</code>(一元运算符)。这三种方式都只能转换整数。<br /> 从十进制转换成其他进制，可以使用 <code>Number.prototype.toString()</code>。支持小数。</p> <h3 id="parseintstr-radix">parseInt(str, radix)</h3> <p>第一个参数是需要解析的字符串；其他进制不加前缀。<br /> 第二个参数是一个进制基数，表示转换时按什么进制来理解这个字符串，默认值10，表示转十进制。<br /> 第二个参数如果非数字，则自动转数字，如无法转称数字则忽略该参数；是数字时，必须是 <code>2-36</code> 的整数，超出该范围，返回 <code>NaN</code>。</p> <pre><code class="language-js">parseInt('1111', 2) // 15 parseInt('1234', 8) // 668 parseInt('18af', 16) // 6319 parseInt('1111') // 1111 </code></pre> <p>如果不传入第二参数，则 <code>parseInt</code> 会默认使用十进制来解析字符串；但是，如果字符串以 <code>0x</code> 开头，会被认为是十六进制数。<br /> 而其他进制的字符串，<code>0o21(八进制)</code>，<code>0b11(二进制)</code> 不会以该进制基数自动转换，而是得到 <code>0</code>。<br /> 所以，在使用 <code>parseInt</code> 进行进制转换时，为了保证运行结果的正确性和稳定性，<strong>第二个参数不能省略</strong>。</p> <pre><code class="language-js">parseInt('0x21') // 33 parseInt('0o21') // 0 parseInt('0b11') // 0 parseInt('111', 'add') // 111 parseInt('111', '787') // NaN </code></pre> <p>如果需要解析的字符串中存在对于当前进制基数无效的字符，则会从最高位取有效字符进行转换，没有效字符则返回NaN。</p> <pre><code class="language-js">parseInt('88kk', 16) // 136，=== 0x88 parseInt('kk', 16) // NaN </code></pre> <h3 id="number">Number()</h3> <p>可以把字符串转为数字，支持其他进制的字符串，默认转成十进制数字。<br /> 字符串中如果存在无效的进制字符时，返回 <code>NaN</code>。<br /> 记住，需要使用进制前缀，<code>0b</code>，<code>0o</code>，<code>0x</code>。</p> <pre><code class="language-js">Number('0b11100') // 28 Number('0o33') // 27 Number('0x33') //51  Number('0x88kk') // NaN </code></pre> <h3 id="一元运算符">+(一元运算符)</h3> <p>与 <code>Number()</code> 一样，可以把字符串转为数字，支持其他进制的字符串，默认转成十进制数字。<br /> 字符串中如果存在无效的进制字符时，返回 <code>NaN</code>。<br /> 也需要使用进制前缀。</p> <pre><code class="language-js">+'0b11100' // 28 +'0o33' // 27 +'0x33' //51  +'0x88kk' // NaN </code></pre> <p>可以看到，基本和 <code>Number()</code> 是一样的，都在本质上是对数字的一种转换处理。</p> <h3 id="numberprototypetostringradix">Number.prototype.toString(radix)</h3> <p>它支持传入一个进制基数，用于将数字转换成对应进制的字符串，<strong>它支持转换小数</strong>。<br /> 未指定默认值为 <code>10</code>，基数参数的范围 <code>2-36</code>，超过范围，报错：RangeError。</p> <pre><code class="language-js">15..toString(2) // 1111 585..toString(8) // 1111 4369..toString(16) // 1111 (11.25).toString(2) // 1011.01 </code></pre> <h2 id="自定义转换">自定义转换</h2> <p>除了这些原生函数以外，也可以自己实现进制数字之间的转换函数。<br /> 根据相应的规则，就可以实现十进制与二进制、十六进制之间的转换的一些方法。</p> <h3 id="十进制与十六进制转换">十进制与十六进制转换</h3> <p>以下代码是针对整数在十进制与十六进制之间的转换，根据基本规则进行换算。<br /> 十六进制是以 <code>0-9</code>、<code>a-f</code> 进行描述数字的一种方式，其中 <code>0-9</code> 取本身数字的值，而 <code>a-f</code> 则取 <code>10-15</code> 的值。<br /> 且字母不区分大小写。</p> <pre><code class="language-js">function int2Hex (num = 0) {   if (num === 0) {     return '0'   }   const HEXS = '0123456789abcdef'   let hex   while (num) {     hex = HEXS.charAt(num % 16) + hex     num = Math.floor(num / 16)   }   return hex } </code></pre> <pre><code class="language-js">function hex2Int (hex = '') {   if (typeof hex !== 'string' || hex === '') {     return NaN   }   const hexs = [...hex.toLowerCase()]   let resInt = 0   for (let i = 0; i &lt; hexs.length; i++) {     const hv = hexs[i]     let num = hv.charCodeAt() &lt; 58 ? +hv : ((code - 97) + 10)     resInt = resInt * 16 + num   }   return resInt } </code></pre> <p>如果要转换八进制，实际上与十六进制很类似，只需根据八进制的数值范围进行部分改动即可。八进制一般使用非常少，不单独列出。</p> <p>下面将重点介绍二进制转换的相关知识，包括小数的二进制表示与转换。</p> <h3 id="十进制和二进制转换">十进制和二进制转换</h3> <p>在十进制与二进制的转换中，我们将考虑小数，理解小数是如何在这两者之间进行转换。<br /> 先选定一个数字，比如：<code>11.125</code> ，我们看下该数字在二进制里的表示：</p> <pre><code class="language-js">(11.125).toString(2) // 1011.001 </code></pre> <p>可以看到，<code>11.125</code> 的二进制表示为：<code>1011.001</code>。下面将以这个数字为例进行转换操作。</p> <h4 id="十进制数字转换成二进制">十进制数字转换成二进制</h4> <p>首先需要了解的是，二进制小数表示方法是如何得来的：</p> <ul> <li> <p><strong>整数</strong> 部分，用二进制表示可以如此计算，数字 11：<br /> 11 / 2 ———— 1<br /> 5 / 2 ———— 1<br /> 2 / 2 ———— 0<br /> 1 / 2 ———— 1<br /> 整数部分的规则，得到的结果是 <code>从下往上</code>，倒着排 <code>1011</code> 就是二进制的 11。</p> </li> <li> <p><strong>小数</strong> 用二进制表示可以如此计算，小数 <code>0.125</code>：<br /> 例如十进制的 0.125<br /> 0.125 × 2 = 0.25 ———— 0<br /> 0.25 × 2 = 0.5 ———— 0<br /> 0.5 × 2 = 1 ———— 1<br /><strong>只有等于1时才结束，如果结果不等于1将会一直循环下去。</strong><br /> 小数部分的规则，得到的结果是 <code>从上往下</code>，顺着排 <code>0.001</code> 就是二进制的 <code>0.125</code>。</p> <p>整数 + 小数，所以 <code>11.125</code> 的二进制表示方式：<code>1011.001</code>。<br /> 根据以上整数和小数分开计算的规则，就可以得出十进制转二进制的函数，如下：</p> <pre><code class="language-js">function c10to2 (num) {   // 整数   const numInteger = Math.floor(num)   // 小数   const numDecimal = num - numInteger    let integers = []   if (numInteger === 0) {     integers = ['0']   } else {     let integerVal = numInteger     while(integerVal !== 1) {       integers.push(integerVal % 2 === 0 ? '0' : '1')       integerVal = Math.floor(integerVal / 2)     }     integers.push('1')   }   const resInteger = integers.reverse().join('')    let decimals = []   if (numDecimal) {     let decimalVal = numDecimal     // 最多取49位的长度     let count = 49     while (decimalVal !== 1 &amp;&amp; count &gt; 0) {       decimalVal = decimalVal * 2       if (decimalVal &gt;= 1) {         decimals.push('1')         if (decimalVal &gt; 1) {           decimalVal = decimalVal - 1         }       } else {         decimals.push('0')       }       count--     }   }   const resDecimal = decimals.join('')    return resInteger + (resDecimal ? ('.' + resDecimal) : '') } </code></pre> <p>小数在转换成二进制时，会存在无限循环的问题，上面的代码里截取了前49个值。<br /> 所以，这里就会引出了一个问题，就是常见的一个数字精度问题：<code>0.1 + 0.2 != 0.3</code>。</p> </li> </ul> <h4 id="01-02--03">0.1+ 0.2 != 0.3</h4> <p>直接看一下 <code>0.1</code> 转二进制：<br /> 0.1 × 2 = 0.2<br /> 0.2 × 2 = 0.4<br /> 0.4 × 2 = 0.8<br /> 0.8 × 2 = 1.6<br /> 0.6 × 2 = 1.2<br /> 0.2 × 2 = 0.4 // 循环开始<br /> 0.4 × 2 = 0.8<br /> 0.8 × 2 = 1.6<br /> 0.6 × 2 = 1.2<br /> ...<br /> ...<br /> 无限循环</p> <p><code>0.2</code> 转二进制：<br /> 0.2 × 2 = 0.4<br /> 0.4 × 2 = 0.8<br /> 0.8 × 2 = 1.6<br /> 0.6 × 2 = 1.2<br /> 0.2 × 2 = 0.4 // 循环开始<br /> 0.4 × 2 = 0.8<br /> 0.8 × 2 = 1.6<br /> 0.6 × 2 = 1.2<br /> ...<br /> ...<br /> 无限循环</p> <p>因为无法得到1，可以发现有限十进制小数， <code>0.1</code> 转换成了无限二进制小数 <code>0.00011001100...</code>，<code>0.2</code> 转成了 <code>0.001100110011...</code>。<br /> 由于无限循环，必然会导致精度丢失，正好 <code>0.1 + 0.2</code> 计算得到的数字在丢失精度后的最后一位不为0，所以导致结果为：<code>0.30000000000000004</code>。<br /> 如果截取精度后最后一位为0，那自然就不存在结果不相等的情况，如 <code>0.1 + 0.6 === 0.7</code>，事实上，0.1和0.6转二进制后都会丢失精度，但截取到的数值都是0，所以相等。<br /> 同样不相等的还设有 <code>0.1 + 0.7 !== 0.8</code>等等。<br /> 所以是计算时转二进制的精度丢失，才导致的 <code>0.1 + 0.2 !== 0.3</code>。</p> <blockquote> <p>在 JavaScript 中所有数值都以 IEEE-754 标准的 64 bit 双精度浮点数进行存储的。<br /> IEEE 754 标准的 64 位双精度浮点数的小数部分最多支持53位二进制位。<br /> 因浮点数小数位的限制而需要先截断二进制数字，再转换为十进制，所以在进行算术计算时会产生误差。</p> </blockquote> <p>这里能看到，如果十进制小数要被转化为有限二进制小数，那么它计算后的小数第一位数必然要是 <code>5</code> 结尾才行(因为只有 <code>0.5 × 2</code> 才能变为整数)。</p> <h4 id="二进制数字转换成十进制">二进制数字转换成十进制</h4> <p>方法是：将二进制分成整数和小数两部分，分别进行转换，然后再组合成结果的十进制数值。</p> <ol> <li> <p>整数部分：这里直接使用 <code>parseInt</code> 函数，<code>parseInt('1011', 2) =&gt; 11</code>。</p> </li> <li> <p>小数部分：如 <code>1011.001</code> 的小数位 <code>001</code>，使用下表的计算方式。<br /> 小数部分|0|0|1<br /> --|--|--|--<br /> 基数的位数次幂|2<sup>-1|2</sup>-2|2^-3<br /> 每位与基数乘积|0 × (2^-1)|0 × (2<sup>-2)|1×(2</sup>-3)<br /> 每位乘积结果|0|0|0.125</p> <p>最后的结果是每位乘积结果相加：<code>0+0+0.125 = 0.125</code>。</p> </li> </ol> <p>整数与小数合起来，就得到了 <code>1011.001</code> 的十进制数字：<code>11.125</code>。</p> <p>根据规则，代码实现如下所示：</p> <pre><code class="language-js">function c2To10 (binaryStr = '') {   if (typeof binaryStr !== 'string' || binaryStr === '') {     return NaN   }   const [ binIntStr, binDecStr ] = binaryStr.split('.')   let binDecimal = 0   if (binDecStr) {     binDecimal = [...binDecStr].reduce((res, val, index) =&gt; {       res += Number(val) * (2 ** (-(index + 1)))       return res     }, 0)   }   return parseInt(binIntStr, 2) + binDecimal } </code></pre> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-102748.htm">Feign调用传输文件异常</a></p>
+                                        <p>下一个：<a href="/news/article-103556.htm">天然猫粮哪个牌子好（天然猫粮哪个牌子好吃）</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-80102.htm" title="宠物医院好评模板100字怎么写的呀（宠物医院好评语30字通用）">宠物医院好评模板100字怎么写的呀（宠物医院好评语30字通用）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-21-free-node-subscribe-links.htm" title="「3月21日」最高速度20.6M/S，2025年ClashX Node每天更新免费机场节点链接地址">「3月21日」最高速度20.6M/S，2025年ClashX Node每天更新免费机场节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-99032.htm" title="宠物粮行业分析图（宠物粮行业分析图表）">宠物粮行业分析图（宠物粮行业分析图表）</a></li>
+                        <li class="py-2"><a href="/news/article-71995.htm" title="国内动物医院排行（中国最好的动物医学院）">国内动物医院排行（中国最好的动物医学院）</a></li>
+                        <li class="py-2"><a href="/news/article-80820.htm" title="将文件转成base64 字符串">将文件转成base64 字符串</a></li>
+                        <li class="py-2"><a href="/news/article-80821.htm" title="动物疫苗的使用方法及注意事项视频讲解下载 动物疫苗的使用方法及注意事项视频讲解下载">动物疫苗的使用方法及注意事项视频讲解下载 动物疫苗的使用方法及注意事项视频讲解下载</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-8-clash-node.htm" title="「3月8日」最高速度18.9M/S，2025年ClashX Node每天更新免费机场节点链接地址">「3月8日」最高速度18.9M/S，2025年ClashX Node每天更新免费机场节点链接地址</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-2-free-subscribe-node.htm" title="「3月2日」最高速度19.5M/S，2025年ClashX Node每天更新免费机场节点链接地址">「3月2日」最高速度19.5M/S，2025年ClashX Node每天更新免费机场节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-83616.htm" title="宠物粮生产厂家排名前十名有哪些（宠物粮食厂家）">宠物粮生产厂家排名前十名有哪些（宠物粮食厂家）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-14-node-share-links.htm" title="「3月14日」最高速度22.2M/S，2025年ClashX Node每天更新免费机场节点链接地址">「3月14日」最高速度22.2M/S，2025年ClashX Node每天更新免费机场节点链接地址</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">69</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">88</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- customer-feedback-end -->
+    </main>
+    <!-- main-area-end -->
+        <!-- footer-area -->
+    <footer>
+        <div class="copyright-wrap">
+            <div class="container">
+                <div class="container-inner-wrap">
+                    <div class="row align-items-center">
+                        <div class="col-lg-8 col-md-9">
+                            <div class="copyright-text">
+                                                    <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                                <p>
+                                    <a href="/">ClashX Node节点订阅官网</a> 版权所有 Powered by WordPress
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer-area-end -->
+    <!-- JS here -->
+    <script src="/assets/website/js/frontend/clashxnode/jquery-3.6.0.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/jquery.odometer.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/jquery.appear.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/slick.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/ajax-form.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/aos.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/plugins.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>

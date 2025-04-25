@@ -1,0 +1,267 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxnode.github.io/news/article-102748.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Feign调用传输文件异常</title>
+        <meta name="description" content="Feign调用传输文件异常  1. Current request is not a multipart request 2. Feign failed and no fallback 3.Read " />
+        <link rel="icon" href="/assets/website/img/clashxnode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="ClashX Node节点订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashxnode.github.io/news/article-102748.htm" />
+    <meta property="og:site_name" content="ClashX Node节点订阅官网" />
+    <meta property="og:title" content="Feign调用传输文件异常" />
+    <meta property="og:image" content="https://clashxnode.github.io/uploads/20240904/3d0cba7f164d9f734a82dea0df009acb.webp" />
+        <meta property="og:release_date" content="2025-04-24T09:15:58" />
+    <meta property="og:updated_time" content="2025-04-24T09:15:58" />
+        <meta property="og:description" content="Feign调用传输文件异常  1. Current request is not a multipart request 2. Feign failed and no fallback 3.Read " />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS here -->
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/animate.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/flaticon.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/odometer.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/slick.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/default.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/style.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/responsive.css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Feign调用传输文件异常">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0ENMRSJ9N6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0ENMRSJ9N6');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3332997411212854"
+     crossorigin="anonymous"></script>
+</head>
+
+<body data-page="detail">
+        <!-- preloader -->
+    <div id="preloader">
+        <div id="loading-center">
+            <div class="loader">
+                <div class="loader-outter"></div>
+                <div class="loader-inner"></div>
+            </div>
+        </div>
+    </div>
+    <!-- preloader-end -->
+    <!-- Scroll-top -->
+    <button class="scroll-top scroll-to-target" data-target="html">
+        <i class="fas fa-angle-up"></i>
+    </button>
+    <!-- Scroll-top-end-->
+    <!-- header-area -->
+    <header>
+        <div id="sticky-header" class="main-header menu-area">
+            <div class="container custom-container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="mobile-nav-toggler"><i class="fas fa-bars"></i></div>
+                        <div class="menu-wrap">
+                            <nav class="menu-nav show">
+                                <div class="logo">
+                                    <a href="/">
+                                                                            <span>ClashX Node</span>
+                                    
+                                                                        </a>
+                                </div>
+                                <div class="navbar-wrap main-menu d-none d-lg-flex">
+                                    <ul class="navigation">
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/free-nodes/">免费节点</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </div>
+                            </nav>
+                        </div>
+                        <!-- Mobile Menu  -->
+                        <div class="mobile-menu">
+                            <nav class="menu-box">
+                                <div class="close-btn"><i class="fas fa-times"></i></div>
+                                <div class="nav-logo"><a href="/">ClashX Node</a>
+                                </div>
+                                <div class="menu-outer">
+                                    <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+                                </div>
+                                <div class="social-links">
+                                    <ul class="clearfix">
+                                        <li><a href="#"><span class="fab fa-twitter"></span></a></li>
+                                        <li><a href="#"><span class="fab fa-facebook-square"></span></a></li>
+                                        <li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
+                                        <li><a href="#"><span class="fab fa-instagram"></span></a></li>
+                                        <li><a href="#"><span class="fab fa-youtube"></span></a></li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="menu-backdrop"></div>
+                        <!-- End Mobile Menu -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-area-end -->
+    <!-- main-area -->
+    <main>
+        <!-- breadcrumb-area -->
+        <section class="breadcrumb-area breadcrumb-bg" data-background="/assets/website/img/clashxnode/bg/breadcrumb_bg.jpg">
+            <div class="container">
+                <div class="container-inner-wrap">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="breadcrumb-content">
+                                <h1 class="title">Feign调用传输文件异常</h1>
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- breadcrumb-area-end -->
+        <!-- customer-feedback -->
+        <section class="customer-feedback-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                                        <input type="hidden" id="share-website-info" data-name="Clash Node官网订阅站" data-url="https://clashnode.github.io">
+                <div class="xcblog-blog-detail">
+                      				  				  				<div id="content_views" class="markdown_views prism-atom-one-dark"> <div class="toc"> <h3>Feign调用传输文件异常</h3> <ul> <li>1. Current request is not a multipart request</li> <li>2. Feign failed and no fallback</li> <li>3.Read timed out executing POST for "xxx"</li> </ul> </div> </h1> <p>feign接口参数使用<strong>@RequestPart</strong> 而非<strong>@RequestParam</strong>, 同时需要指定<strong>consumes</strong>,比如这样：</p> <pre><code class="prism language-java"><span class="token annotation punctuation">@PostMapping</span><span class="token punctuation">(</span>value<span class="token operator">=</span><span class="token string">"/upload"</span><span class="token punctuation">,</span>consumes<span class="token operator">=</span> MediaType<span class="token punctuation">.</span>MULTIPART_FORM_DATA_VALUE<span class="token punctuation">)</span>     Result<span class="token generics function"><span class="token punctuation">&lt;</span>FileStorage<span class="token punctuation">&gt;</span></span><span class="token function">upload</span><span class="token punctuation">(</span><span class="token annotation punctuation">@RequestPart</span><span class="token punctuation">(</span>value<span class="token operator">=</span><span class="token string">"file"</span><span class="token punctuation">)</span> MultipartFile file<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre> </h1> <p>这是<strong>hystrix</strong>导致，关闭<strong>feign</strong>熔断，或者延长熔断的超时时间,我简单粗暴的直接关了</p> </h1> <p>配置了<strong>hystrix</strong>还不行，或者延长<strong>ribbon</strong>的超时时间，参考了Feign超时问题的办法，简单来说就是<strong>feign</strong>经过了<strong>ribbonn</strong>和<strong>hystrix</strong>两级调用，而且都有一个默认的超时时间，延长超时时间就好了</p> <pre><code class="prism language-yml"><span class="token key atrule">spring</span><span class="token punctuation">:</span><span class="token key atrule">servlet</span><span class="token punctuation">:</span><span class="token key atrule">context-path</span><span class="token punctuation">:</span> /farm<span class="token key atrule">application</span><span class="token punctuation">:</span><span class="token key atrule">name</span><span class="token punctuation">:</span> farm<span class="token key atrule">profiles</span><span class="token punctuation">:</span><span class="token key atrule">active</span><span class="token punctuation">:</span> dev<span class="token key atrule">main</span><span class="token punctuation">:</span><span class="token key atrule">allow-bean-definition-overriding</span><span class="token punctuation">:</span><span class="token boolean important">true</span><span class="token key atrule">eureka</span><span class="token punctuation">:</span><span class="token key atrule">client</span><span class="token punctuation">:</span><span class="token key atrule">service-url</span><span class="token punctuation">:</span><span class="token key atrule">defaultZone</span><span class="token punctuation">:</span> http<span class="token punctuation">:</span>//127.0.0.1<span class="token punctuation">:</span>7001/eureka<span class="token key atrule">instance</span><span class="token punctuation">:</span><span class="token key atrule">prefer-ip-address</span><span class="token punctuation">:</span><span class="token boolean important">true</span><span class="token comment">#关闭feign熔断</span><span class="token key atrule">feign</span><span class="token punctuation">:</span><span class="token key atrule">hystrix</span><span class="token punctuation">:</span><span class="token key atrule">enabled</span><span class="token punctuation">:</span><span class="token boolean important">false</span><span class="token comment">#开启熔断，关闭熔断超时或延长调用超时时间</span><span class="token comment">#hystrix:</span><span class="token comment">#  command:</span><span class="token comment">#    default:</span><span class="token comment">#      execution:</span><span class="token comment">#        timeout:</span><span class="token comment">#          enabled: false</span><span class="token comment">#        isolation:</span><span class="token comment">#          thread:</span><span class="token comment">#            timeoutInMilliseconds: 30000</span><span class="token comment">#延长ribbon超时时间</span><span class="token key atrule">ribbon</span><span class="token punctuation">:</span><span class="token key atrule">ReadTimeout</span><span class="token punctuation">:</span><span class="token number">30000</span><span class="token key atrule">ConnectTimeout</span><span class="token punctuation">:</span><span class="token number">30000</span></code></pre> </div> 			                </div>
+                <div class="clearfix"></div>
+                <div class="col-md-12 mt-5">
+                                        <p>上一个：<a href="/news/article-101951.htm">宠物粮食品牌名字4个字大全图片及价格 宠物粮食品牌名字4个字大全图片及价格</a></p>
+                                        <p>下一个：<a href="/news/article-102749.htm">JavaScript中的多种进制与进制转换_在线工具</a></p>
+                                    </div>
+                                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-90139.htm" title="华畜兽药是正规公司吗兽用林可（华畜兽药是哪个公司的）">华畜兽药是正规公司吗兽用林可（华畜兽药是哪个公司的）</a></li>
+                        <li class="py-2"><a href="/news/article-101195.htm" title="大人让猫挠了轻微出血有事吗图片（大人让猫爪子抓出血了怎么办）">大人让猫挠了轻微出血有事吗图片（大人让猫爪子抓出血了怎么办）</a></li>
+                        <li class="py-2"><a href="/news/article-94146.htm" title="女人养猫（女人养猫是什么心态）">女人养猫（女人养猫是什么心态）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-25-clash-node.htm" title="「4月25日」最高速度21.6M/S，2025年ClashX Node每天更新免费机场节点链接地址">「4月25日」最高速度21.6M/S，2025年ClashX Node每天更新免费机场节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-78063.htm" title="猫三联几个月开始***（猫三联在几个月的时候打最好）">猫三联几个月开始***（猫三联在几个月的时候打最好）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-3-31-clash-node-github.htm" title="「3月31日」最高速度21.8M/S，2025年ClashX Node每天更新免费机场节点链接地址">「3月31日」最高速度21.8M/S，2025年ClashX Node每天更新免费机场节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-99033.htm" title="成都哪里有宠物领养中心（成都哪里可以领养宠物）">成都哪里有宠物领养中心（成都哪里可以领养宠物）</a></li>
+                        <li class="py-2"><a href="/free-nodes/2025-4-9-clash-node-daily-updates.htm" title="「4月9日」最高速度22.7M/S，2025年ClashX Node每天更新免费机场节点链接地址">「4月9日」最高速度22.7M/S，2025年ClashX Node每天更新免费机场节点链接地址</a></li>
+                        <li class="py-2"><a href="/news/article-71342.htm" title="流浪狗领养小程序（领养流浪狗要办什么手续）">流浪狗领养小程序（领养流浪狗要办什么手续）</a></li>
+                        <li class="py-2"><a href="/news/article-87213.htm" title="小猫养多久才认主人?怎样不让猫得猫藓呢（小猫养多久才认家）">小猫养多久才认主人?怎样不让猫得猫藓呢（小猫养多久才认家）</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">69</span> <a href="/date/2025-04/" title="2025-04 归档">2025-04</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">88</span> <a href="/date/2025-03/" title="2025-03 归档">2025-03</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- customer-feedback-end -->
+    </main>
+    <!-- main-area-end -->
+        <!-- footer-area -->
+    <footer>
+        <div class="copyright-wrap">
+            <div class="container">
+                <div class="container-inner-wrap">
+                    <div class="row align-items-center">
+                        <div class="col-lg-8 col-md-9">
+                            <div class="copyright-text">
+                                                    <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/free-nodes/">免费节点</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                                <p>
+                                    <a href="/">ClashX Node节点订阅官网</a> 版权所有 Powered by WordPress
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer-area-end -->
+    <!-- JS here -->
+    <script src="/assets/website/js/frontend/clashxnode/jquery-3.6.0.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/jquery.odometer.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/jquery.appear.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/slick.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/ajax-form.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/aos.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/plugins.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
