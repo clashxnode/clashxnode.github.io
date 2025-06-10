@@ -1,4 +1,4 @@
-# 「6月6日」最高速度19.2M/S，2025年ClashX Node每天更新免费机场节点链接地址  更新时间 2025-06-06 09:26:41
+# 「6月10日」最高速度19.2M/S，2025年ClashX Node每天更新免费机场节点链接地址  更新时间 2025-06-10 08:54:36
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://clashxnode.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### Clash订阅链接
 
-- https://clashxnode.github.io/uploads/2025/06/0-20250606.yaml
-- https://clashxnode.github.io/uploads/2025/06/1-20250606.yaml
-- https://clashxnode.github.io/uploads/2025/06/2-20250606.yaml
-- https://clashxnode.github.io/uploads/2025/06/3-20250606.yaml
-- https://clashxnode.github.io/uploads/2025/06/4-20250606.yaml
+- https://clashxnode.github.io/uploads/2025/06/0-20250610.yaml
+- https://clashxnode.github.io/uploads/2025/06/1-20250610.yaml
+- https://clashxnode.github.io/uploads/2025/06/2-20250610.yaml
+- https://clashxnode.github.io/uploads/2025/06/3-20250610.yaml
+- https://clashxnode.github.io/uploads/2025/06/4-20250610.yaml
 
 ### V2ray订阅链接
 
-- https://clashxnode.github.io/uploads/2025/06/0-20250606.txt
-- https://clashxnode.github.io/uploads/2025/06/1-20250606.txt
-- https://clashxnode.github.io/uploads/2025/06/2-20250606.txt
-- https://clashxnode.github.io/uploads/2025/06/3-20250606.txt
-- https://clashxnode.github.io/uploads/2025/06/4-20250606.txt
+- https://clashxnode.github.io/uploads/2025/06/0-20250610.txt
+- https://clashxnode.github.io/uploads/2025/06/1-20250610.txt
+- https://clashxnode.github.io/uploads/2025/06/2-20250610.txt
+- https://clashxnode.github.io/uploads/2025/06/3-20250610.txt
+- https://clashxnode.github.io/uploads/2025/06/4-20250610.txt
 
 ### Sing-box订阅链接
 
-- https://clashxnode.github.io/uploads/2025/06/20250606.json
+- https://clashxnode.github.io/uploads/2025/06/20250610.json
 
 ## 更多clash节点订阅 ：
 
