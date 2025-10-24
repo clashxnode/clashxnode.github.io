@@ -1,4 +1,4 @@
-# 「8月17日」最高速度21.5M/S，2025年ClashX Node每天更新免费机场节点链接地址  更新时间 2025-08-17 08:21:17
+# ClashX Node - 10月24日20.6M/S|免费Singbox节点/V2ray节点/Shadowrocket节点/Clash节点/SSR节点节点推荐，V2rayC梯子购买推荐  更新时间 2025-10-24 10:42:35
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://clashxnode.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -7,27 +7,27 @@
 
 ## 订阅链接：
 
-### Clash订阅链接
+### 免费Clash节点订阅链接
 
-- https://clashxnode.github.io/uploads/2025/08/0-20250817.yaml
-- https://clashxnode.github.io/uploads/2025/08/1-20250817.yaml
-- https://clashxnode.github.io/uploads/2025/08/2-20250817.yaml
-- https://clashxnode.github.io/uploads/2025/08/3-20250817.yaml
-- https://clashxnode.github.io/uploads/2025/08/4-20250817.yaml
+- https://clashxnode.github.io/uploads/2025/10/0-20251024.yaml
+- https://clashxnode.github.io/uploads/2025/10/1-20251024.yaml
+- https://clashxnode.github.io/uploads/2025/10/2-20251024.yaml
+- https://clashxnode.github.io/uploads/2025/10/3-20251024.yaml
+- https://clashxnode.github.io/uploads/2025/10/4-20251024.yaml
 
-### V2ray订阅链接
+### 免费V2ray节点订阅链接
 
-- https://clashxnode.github.io/uploads/2025/08/0-20250817.txt
-- https://clashxnode.github.io/uploads/2025/08/1-20250817.txt
-- https://clashxnode.github.io/uploads/2025/08/2-20250817.txt
-- https://clashxnode.github.io/uploads/2025/08/3-20250817.txt
-- https://clashxnode.github.io/uploads/2025/08/4-20250817.txt
+- https://clashxnode.github.io/uploads/2025/10/0-20251024.txt
+- https://clashxnode.github.io/uploads/2025/10/1-20251024.txt
+- https://clashxnode.github.io/uploads/2025/10/2-20251024.txt
+- https://clashxnode.github.io/uploads/2025/10/3-20251024.txt
+- https://clashxnode.github.io/uploads/2025/10/4-20251024.txt
 
-### Sing-box订阅链接
+### 免费Sing-box节点订阅链接
 
-- https://clashxnode.github.io/uploads/2025/08/20250817.json
+- https://clashxnode.github.io/uploads/2025/10/20251024.json
 
-## 更多clash节点订阅 ：
+## 更多Clash节点订阅 ：
 
 
 ### 高速机场推荐1【<a href="https://www.nfsq.us/#/register?code=UTg5SIHV" target="_blank">农夫山泉</a>】
