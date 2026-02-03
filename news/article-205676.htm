@@ -1,0 +1,381 @@
+<!doctype html>
+<html class="no-js" lang="zh-CN">
+
+<head>
+        <link rel="canonical" href="https://clashxnode.github.io/news/article-205676.htm" />
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>小火箭中vmess协议设置详解：全方位指南与实用技巧</title>
+        <meta name="description" content="在现代互联网的日益复杂和隐私问题的日益严峻背景下，如何保障个人上网安全、突破地理封锁，成为了许多用户关注的焦点。小火箭（Shadowrocket）作为一款优秀的iOS平台代理客户端，以其简单、快速、安" />
+        <link rel="icon" href="/assets/website/img/clashxnode/favicon.ico" type="image/x-icon"/>
+
+    <meta name="author" content="ClashX Node节点订阅官网">
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://clashxnode.github.io/news/article-205676.htm" />
+    <meta property="og:site_name" content="ClashX Node节点订阅官网" />
+    <meta property="og:title" content="小火箭中vmess协议设置详解：全方位指南与实用技巧" />
+    <meta property="og:image" content="https://clashxnode.github.io/uploads/20240904/8b01f79f60ac7bdf93bd466d39c51fd8.webp" />
+        <meta property="og:release_date" content="2026-01-30T12:21:28" />
+    <meta property="og:updated_time" content="2026-01-30T12:21:28" />
+        <meta property="og:description" content="在现代互联网的日益复杂和隐私问题的日益严峻背景下，如何保障个人上网安全、突破地理封锁，成为了许多用户关注的焦点。小火箭（Shadowrocket）作为一款优秀的iOS平台代理客户端，以其简单、快速、安" />
+        
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- CSS here -->
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/animate.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/owl.carousel.min.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/flaticon.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/odometer.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/aos.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/slick.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/default.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/style.css">
+    <link rel="stylesheet" href="/assets/website/css/clashxnode/responsive.css">
+    <link rel="stylesheet" href="/assets/website/css/G.css" />
+
+    <meta name="applicable-device" content="pc,mobile" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta http-equiv="Cache-Control" content="no-transform" />
+    <meta name="robots" content="max-image-preview:large" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="小火箭中vmess协议设置详解：全方位指南与实用技巧">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="dns-prefetch" href="https:/www.googletagmanager.com">
+    <link rel="dns-prefetch" href="https://www.googleadservices.com">
+    <link rel="dns-prefetch" href="https://www.google-analytics.com">
+    <link rel="dns-prefetch" href="https://pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="https://cm.g.doubleclick.net">
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0ENMRSJ9N6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-0ENMRSJ9N6');
+</script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6957240247502121" crossorigin="anonymous"></script></head>
+
+<body data-page="detail">
+        <!-- preloader -->
+    <div id="preloader">
+        <div id="loading-center">
+            <div class="loader">
+                <div class="loader-outter"></div>
+                <div class="loader-inner"></div>
+            </div>
+        </div>
+    </div>
+    <!-- preloader-end -->
+    <!-- Scroll-top -->
+    <button class="scroll-top scroll-to-target" data-target="html">
+        <i class="fas fa-angle-up"></i>
+    </button>
+    <!-- Scroll-top-end-->
+    <!-- header-area -->
+    <header>
+        <div id="sticky-header" class="main-header menu-area">
+            <div class="container custom-container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="mobile-nav-toggler"><i class="fas fa-bars"></i></div>
+                        <div class="menu-wrap">
+                            <nav class="menu-nav show">
+                                <div class="logo">
+                                    <a href="/">
+                                                                            <span>ClashX Node 免费节点</span>
+                                    
+                                                                        </a>
+                                </div>
+                                <div class="navbar-wrap main-menu d-none d-lg-flex">
+                                    <ul class="navigation">
+                                                                                <li><a href="/">首页</a></li>
+                                                                                <li><a href="/paid-subscribe/">推荐机场</a></li>
+                                                                                <li><a href="/client.htm">客户端</a></li>
+                                                                                <li><a href="/news/">新闻资讯</a></li>
+                                                                            </ul>
+                                </div>
+                            </nav>
+                        </div>
+                        <!-- Mobile Menu  -->
+                        <div class="mobile-menu">
+                            <nav class="menu-box">
+                                <div class="close-btn"><i class="fas fa-times"></i></div>
+                                <div class="nav-logo"><a href="/">ClashX Node</a>
+                                </div>
+                                <div class="menu-outer">
+                                    <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+                                </div>
+                                <div class="social-links">
+                                    <ul class="clearfix">
+                                        <li><a href="#"><span class="fab fa-twitter"></span></a></li>
+                                        <li><a href="#"><span class="fab fa-facebook-square"></span></a></li>
+                                        <li><a href="#"><span class="fab fa-pinterest-p"></span></a></li>
+                                        <li><a href="#"><span class="fab fa-instagram"></span></a></li>
+                                        <li><a href="#"><span class="fab fa-youtube"></span></a></li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                        <div class="menu-backdrop"></div>
+                        <!-- End Mobile Menu -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header-area-end -->
+    <!-- main-area -->
+    <main>
+        <!-- breadcrumb-area -->
+        <section class="breadcrumb-area breadcrumb-bg" data-background="/assets/website/img/clashxnode/bg/breadcrumb_bg.jpg">
+            <div class="container">
+                <div class="container-inner-wrap">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="breadcrumb-content">
+                                <h1 class="title">小火箭中vmess协议设置详解：全方位指南与实用技巧</h1>
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="/">首页</a></li>
+                                        <li class="breadcrumb-item"><a href="/news/">新闻资讯</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">正文</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- breadcrumb-area-end -->
+        <!-- customer-feedback -->
+        <section class="customer-feedback-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9">
+                        <input type="hidden" id="share-website-info" data-name="Clash Node免费节点站" data-url="https://clashnode.github.io">
+<div class="xcblog-blog-detail xcblog-blog-detail-defined">
+    
+<p data-start="30" data-end="210" class="">在现代互联网的日益复杂和隐私问题的日益严峻背景下，如何保障个人上网安全、突破地理封锁，成为了许多用户关注的焦点。<strong data-start="86" data-end="93">小火箭</strong>（Shadowrocket）作为一款优秀的iOS平台代理客户端，以其简单、快速、安全的特性，深受全球用户的喜爱。特别是<strong data-start="152" data-end="163">vmess协议</strong>，作为V2Ray项目的核心协议之一，以其强大的加密能力和抗干扰性，在网络代理领域有着广泛应用。</p>
+<p data-start="212" data-end="311" class="">本文将详细讲解如何在小火箭中设置vmess协议，帮助用户轻松突破网络限制，享受更自由的网络世界。同时，文章还将解答一些常见的使用问题，提供实用技巧，确保您能顺利设置并高效使用小火箭与vmess协议。</p>
+<h2 data-start="313" data-end="333" class="">一、什么是小火箭与vmess协议？</h2>
+<h3 data-start="335" data-end="348" class="">1.1 小火箭简介</h3>
+<p data-start="350" data-end="496" class="">小火箭（Shadowrocket）是一款专为iOS平台设计的网络代理客户端。其主要功能是通过代理协议（如vmess、Shadowsocks、Trojan等）帮助用户突破地理封锁，保障上网隐私，并加速网络连接。小火箭具有极高的灵活性与可靠性，支持多种协议，能够根据个人需求选择最适合的代理方式。</p>
+<p data-start="498" data-end="581" class="">小火箭的界面设计简洁直观，操作也非常便捷，无论是普通用户还是技术达人都能轻松上手。同时，它还具备多种附加功能，如流量统计、规则管理等，进一步增强了用户的网络控制能力。</p>
+<h3 data-start="583" data-end="602" class="">1.2 什么是vmess协议？</h3>
+<p data-start="604" data-end="691" class=""><strong data-start="604" data-end="615">Vmess协议</strong>是V2Ray项目中的一个核心协议，专门用于提供加密、匿名、安全的网络传输。Vmess协议通过加密技术，能够有效保护用户的网络流量，防止数据被窃取或篡改。</p>
+<p data-start="693" data-end="856" class="">与传统的代理协议（如Shadowsocks）相比，vmess协议具有更强的抗干扰能力，能在复杂的网络环境中保持稳定的连接。它支持多种加密算法，如AES-128-GCM、Chacha20-IETF等，能够根据需要选择最合适的加密方式。此外，vmess协议还支持动态端口、伪装协议等功能，使其在对抗网络审查和干扰时更加灵活与强大。</p>
+<h2 data-start="858" data-end="880" class="">二、如何在小火箭中设置vmess协议？</h2>
+<p data-start="882" data-end="916" class="">为了帮助您顺利使用小火箭设置vmess协议，下面将详细讲解设置过程。</p>
+<h3 data-start="918" data-end="934" class="">2.1 下载并安装小火箭</h3>
+<p data-start="936" data-end="965" class="">首先，您需要在iOS设备上安装小火箭。请按照以下步骤操作：</p>
+<ol data-start="967" data-end="1044">
+<li data-start="967" data-end="1004" class="">
+<p data-start="970" data-end="1004" class="">打开App Store，搜索“小火箭”（Shadowrocket）。</p>
+</li>
+<li data-start="1005" data-end="1044" class="">
+<p data-start="1008" data-end="1044" class="">点击下载并安装应用程序。小火箭是一个付费应用，请确保您有足够的账户余额。</p>
+</li>
+</ol>
+<h3 data-start="1046" data-end="1063" class="">2.2 获取vmess链接</h3>
+<p data-start="1065" data-end="1162" class="">设置vmess协议之前，您需要从支持vmess协议的服务提供商处获取相应的vmess链接。这个链接通常包含必要的配置信息，如服务器地址、端口、UUID（用户ID）、AlterId（备用ID）等。</p>
+<h3 data-start="1164" data-end="1179" class="">2.3 打开小火箭应用</h3>
+<p data-start="1181" data-end="1243" class="">在设备上找到并打开已经安装的小火箭应用程序。进入主界面后，您将看到一个简洁的用户界面，点击右上角的“+”按钮，进入配置界面。</p>
+<h3 data-start="1245" data-end="1262" class="">2.4 添加vmess配置</h3>
+<h4 data-start="1264" data-end="1277" class="">方式A：手动添加</h4>
+<ol data-start="1279" data-end="1560">
+<li data-start="1279" data-end="1304" class="">
+<p data-start="1282" data-end="1304" class="">点击右上角的“+”按钮，选择“添加服务器”。</p>
+</li>
+<li data-start="1305" data-end="1329" class="">
+<p data-start="1308" data-end="1329" class="">在弹出的选择框中，选择“vmess”协议。</p>
+</li>
+<li data-start="1330" data-end="1560" class="">
+<p data-start="1333" data-end="1353" class="">按照服务提供商提供的配置，填写相关信息：</p>
+<ul data-start="1357" data-end="1560">
+<li data-start="1357" data-end="1383" class="">
+<p data-start="1359" data-end="1383" class=""><strong data-start="1359" data-end="1365">名称</strong>：为该服务器设置一个便于识别的名称。</p>
+</li>
+<li data-start="1387" data-end="1416" class="">
+<p data-start="1389" data-end="1416" class=""><strong data-start="1389" data-end="1399">Server</strong>：输入服务提供商提供的服务器地址。</p>
+</li>
+<li data-start="1420" data-end="1441" class="">
+<p data-start="1422" data-end="1441" class=""><strong data-start="1422" data-end="1430">Port</strong>：填写服务器的端口号。</p>
+</li>
+<li data-start="1445" data-end="1475" class="">
+<p data-start="1447" data-end="1475" class=""><strong data-start="1447" data-end="1455">UUID</strong>：填入提供的UUID（用户唯一标识符）。</p>
+</li>
+<li data-start="1479" data-end="1507" class="">
+<p data-start="1481" data-end="1507" class=""><strong data-start="1481" data-end="1492">AlterId</strong>：填写备用ID（如果有提供）。</p>
+</li>
+<li data-start="1511" data-end="1560" class="">
+<p data-start="1513" data-end="1560" class=""><strong data-start="1513" data-end="1521">加密方式</strong>：选择加密算法，常见的有AES-128-GCM、Chacha20-IETF等。</p>
+</li>
+</ul>
+</li>
+</ol>
+<h4 data-start="1562" data-end="1577" class="">方式B：通过链接添加</h4>
+<p data-start="1579" data-end="1612" class="">如果您已经有了vmess协议的完整链接，可以直接通过链接导入配置：</p>
+<ol data-start="1614" data-end="1701">
+<li data-start="1614" data-end="1639" class="">
+<p data-start="1617" data-end="1639" class="">点击“添加服务器”，然后选择“从链接导入”。</p>
+</li>
+<li data-start="1640" data-end="1674" class="">
+<p data-start="1643" data-end="1674" class="">粘贴您的vmess服务器链接，应用程序会自动填充相关配置信息。</p>
+</li>
+<li data-start="1675" data-end="1701" class="">
+<p data-start="1678" data-end="1701" class="">确认填写的信息，并根据需要调整加密方式等选项。</p>
+</li>
+</ol>
+<h3 data-start="1703" data-end="1717" class="">2.5 配置其他选项</h3>
+<p data-start="1719" data-end="1754" class="">在vmess协议的设置中，除了基本的服务器信息外，还可以设置以下选项：</p>
+<ul data-start="1756" data-end="1894">
+<li data-start="1756" data-end="1829" class="">
+<p data-start="1758" data-end="1829" class=""><strong data-start="1758" data-end="1766">加密方式</strong>：小火箭支持多种加密方式，如AES-128-GCM、Chacha20-IETF等。选择一种加密方式，确保连接的安全性和稳定性。</p>
+</li>
+<li data-start="1830" data-end="1894" class="">
+<p data-start="1832" data-end="1894" class=""><strong data-start="1832" data-end="1840">伪装类型</strong>：选择“none”表示不进行伪装，或根据需求选择其他伪装类型。某些情况下，伪装可以帮助突破更严格的网络审查。</p>
+</li>
+</ul>
+<h3 data-start="1896" data-end="1911" class="">2.6 保存设置并连接</h3>
+<p data-start="1913" data-end="1976" class="">完成所有配置后，点击右上角的“保存设置”按钮。保存后，您将返回到小火箭的主界面。点击左上角的开关按钮，即可启动vmess连接。</p>
+<h3 data-start="1978" data-end="1990" class="">2.7 验证连接</h3>
+<p data-start="1992" data-end="2063" class="">连接成功后，打开浏览器尝试访问被限制或无法访问的网站，如Google、YouTube等。如果能够成功访问，说明您的vmess连接已经建立成功。</p>
+<h2 data-start="2065" data-end="2085" class="">三、小火箭设置vmess的注意事项</h2>
+<p data-start="2087" data-end="2113" class="">在进行vmess协议的设置时，以下几点需要特别注意：</p>
+<ol data-start="2115" data-end="2339">
+<li data-start="2115" data-end="2162" class="">
+<p data-start="2118" data-end="2162" class=""><strong data-start="2118" data-end="2132">确保配置信息准确无误</strong>：填写配置时，确保服务器地址、端口、UUID等信息完全正确。</p>
+</li>
+<li data-start="2163" data-end="2217" class="">
+<p data-start="2166" data-end="2217" class=""><strong data-start="2166" data-end="2179">选择合适的加密方式</strong>：根据个人需求和服务提供商推荐的加密方式进行选择，确保连接的安全性和稳定性。</p>
+</li>
+<li data-start="2218" data-end="2283" class="">
+<p data-start="2221" data-end="2283" class=""><strong data-start="2221" data-end="2236">定期检查远程服务器状态</strong>：时常检查远程服务器的状态，确保连接的稳定性。如果服务器不稳定，可以尝试切换到其他服务器节点。</p>
+</li>
+<li data-start="2284" data-end="2339" class="">
+<p data-start="2287" data-end="2339" class=""><strong data-start="2287" data-end="2303">遵循服务提供商的使用规范</strong>：不同的服务提供商可能有不同的配置要求，请仔细阅读服务商提供的文档说明。</p>
+</li>
+</ol>
+<h2 data-start="2341" data-end="2352" class="">四、常见问题解答</h2>
+<h3 data-start="2354" data-end="2380" class="">4.1 为什么我无法连接到vmess服务器？</h3>
+<p data-start="2382" data-end="2469" class="">如果无法连接，首先检查配置信息是否正确，确认UUID、端口等设置无误。其次，确保您的网络环境正常，没有被防火墙或其他网络限制阻挡。如果问题依然存在，尝试重启小火箭应用或设备。</p>
+<h3 data-start="2471" data-end="2492" class="">4.2 如何更改vmess服务器？</h3>
+<p data-start="2494" data-end="2550" class="">在小火箭的主界面，点击当前连接的vmess服务器，进入编辑界面。您可以更新服务器信息或添加新的vmess服务器。</p>
+<h3 data-start="2552" data-end="2576" class="">4.3 vmess是否是唯一的协议选择？</h3>
+<p data-start="2578" data-end="2640" class="">不是的，小火箭支持多种协议，包括Shadowsocks、Trojan等。根据需要，您可以选择不同的协议来满足不同的网络需求。</p>
+<h3 data-start="2642" data-end="2660" class="">4.4 使用小火箭的费用问题</h3>
+<p data-start="2662" data-end="2733" class="">小火箭本身是付费应用，您需要通过App Store购买。不过，vmess协议的使用费用由服务提供商定价，通常会有不同的套餐选择，确保信息透明。</p>
+<h2 data-start="2735" data-end="2745" class="">五、总结与点评</h2>
+<p data-start="2747" data-end="2845" class="">通过本文的详细介绍，您已经掌握了如何在小火箭中设置vmess协议，学会了如何确保连接的稳定与安全。小火箭作为一款优秀的iOS代理工具，不仅操作简便，还提供了灵活的配置选项，能够满足不同用户的需求。</p>
+<p data-start="2847" data-end="2945" class="">vmess协议作为一项强大且高效的代理协议，凭借其优异的加密性能和抗干扰能力，广泛应用于网络隐私保护、突破地理封锁等场景。通过在小火箭中使用vmess协议，用户可以享受到更加安全、畅通的上网体验。</p>
+<p data-start="2947" data-end="3045" class="">在实际使用过程中，遇到问题时，可以参考本文的常见问题解答和设置技巧，快速排查并解决问题。总的来说，小火箭与vmess协议的结合，是保护隐私和提升上网体验的有效手段，值得每个重视网络安全的用户尝试。</p></div>
+<div class="clearfix"></div>
+<div class="col-md-12 mt-5">
+        <p>上一个：<a href="/news/article-205252.htm">深度探索V2ray订阅机制：从原理到实践的全面指南</a></p>
+        <p>下一个：<a href="/news/article-206078.htm">突破网络边界：2018年DNS修改全攻略与科学上网实践</a></p>
+    </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">热门文章</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2"><a href="/news/article-206078.htm" title="突破网络边界：2018年DNS修改全攻略与科学上网实践">突破网络边界：2018年DNS修改全攻略与科学上网实践</a></li>
+                        <li class="py-2"><a href="/news/article-202799.htm" title="三星手机Clash代理全攻略：从零开始打造安全高速网络环境">三星手机Clash代理全攻略：从零开始打造安全高速网络环境</a></li>
+                        <li class="py-2"><a href="/news/article-187355.htm" title="科学上网流量真相大揭秘：你到底花了多少流量？">科学上网流量真相大揭秘：你到底花了多少流量？</a></li>
+                        <li class="py-2"><a href="/news/article-186542.htm" title="深度揭秘V2ray免流usp：从原理到实战的全方位指南">深度揭秘V2ray免流usp：从原理到实战的全方位指南</a></li>
+                        <li class="py-2"><a href="/news/article-201979.htm" title="深度剖析Shadowrocket代理直连：从入门到精通的完整指南">深度剖析Shadowrocket代理直连：从入门到精通的完整指南</a></li>
+                        <li class="py-2"><a href="/news/article-205676.htm" title="小火箭中vmess协议设置详解：全方位指南与实用技巧">小火箭中vmess协议设置详解：全方位指南与实用技巧</a></li>
+                        <li class="py-2"><a href="/news/article-196682.htm" title="解锁自由网络：安卓盒子安装V2Ray全攻略与实战教程">解锁自由网络：安卓盒子安装V2Ray全攻略与实战教程</a></li>
+                        <li class="py-2"><a href="/news/article-198720.htm" title="科学上网免费试用全攻略：解锁网络自由与隐私保护">科学上网免费试用全攻略：解锁网络自由与隐私保护</a></li>
+                        <li class="py-2"><a href="/news/article-192613.htm" title="深度剖析Clash DNS配置：从原理到实战的完整指南">深度剖析Clash DNS配置：从原理到实战的完整指南</a></li>
+                        <li class="py-2"><a href="/news/article-197092.htm" title="梅林固件下SSR设置详细指南：科学上网一步到位">梅林固件下SSR设置详细指南：科学上网一步到位</a></li>
+                    </ul>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">归纳</h3>
+    </div>
+    <div class="panel-body">
+        <ul class="p-0 x-0" style="list-style: none;margin: 0;padding: 0;">
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">3</span> <a href="/date/2026-02/" title="2026-02 归档">2026-02</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">30</span> <a href="/date/2026-01/" title="2026-01 归档">2026-01</a></h4>
+            </li>
+                        <li class="py-2">
+                <h4><span class="badge" style="float: right;">19</span> <a href="/date/2025-12/" title="2025-12 归档">2025-12</a></h4>
+            </li>
+                    </ul>
+    </div>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- customer-feedback-end -->
+    </main>
+    <!-- main-area-end -->
+        <!-- footer-area -->
+    <footer>
+        <div class="copyright-wrap">
+            <div class="container">
+                <div class="container-inner-wrap">
+                    <div class="row align-items-center">
+                        <div class="col-lg-8 col-md-9">
+                            <div class="copyright-text">
+                                                    <p>本站内容仅供学习与技术研究用途，无意传播或倡导任何违反法律法规的行为。在此声明：用户须自行了解所在地法律法规，合法合规使用；因使用不当产生的法律责任，与本站及作者无关；请在使用前仔细阅读本声明，继续使用即视为同意以上条款。</p>
+                    <p>
+                                                <a href="/">首页</a> |
+                                                <a href="/paid-subscribe/">推荐机场</a> |
+                                                <a href="/client.htm">客户端</a> |
+                                                <a href="/news/">新闻资讯</a> |
+                                                <a href="/about-us.htm">关于我们</a> |
+                        <a href="/disclaimer.htm">免责申明</a> |
+                        <a href="/privacy.htm">隐私申明</a> |
+                        <a href="/sitemap.xml">网站地图</a>
+                    </p>
+                                                    <p>
+                                    <a href="/">ClashX Node节点订阅官网</a> 版权所有 Powered by WordPress
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- footer-area-end -->
+    <!-- JS here -->
+    <script src="/assets/website/js/frontend/clashxnode/jquery-3.6.0.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/bootstrap.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/isotope.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/imagesloaded.pkgd.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/jquery.magnific-popup.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/owl.carousel.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/jquery.odometer.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/jquery.appear.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/slick.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/ajax-form.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/wow.min.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/aos.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/plugins.js"></script>
+    <script src="/assets/website/js/frontend/clashxnode/main.js"></script>
+    <script src="https://www.freeclashnode.com/assets/js/frontend/invite-url.js"></script>
+    <script src="/assets/website/js/frontend/G.js"></script>
+</body>
+
+</html>
