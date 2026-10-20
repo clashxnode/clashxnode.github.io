@@ -1,4 +1,4 @@
-# ClashX Node - 10月13日23M/S|免费Singbox节点/Clash节点/Shadowrocket节点/SSR节点/V2ray节点节点推荐，V2rayC梯子购买推荐  更新时间 2026-10-13 09:49:52
+# ClashX Node - 10月20日19.7M/S|免费SSR节点/V2ray节点/Singbox节点/Clash节点/Shadowrocket节点节点推荐，V2rayC梯子购买推荐  更新时间 2026-10-20 09:06:05
 所有免费clash节点都爬取自网络，请勿用于非法用途 。节点地址：<a href="https://clashxnode.github.io" target="_blank">点击跳转</a>
 
 ## clash使用教程：
@@ -9,23 +9,23 @@
 
 ### 免费Clash节点订阅链接
 
-- https://clashxnode.github.io/uploads/2026/10/0-20261013.yaml
-- https://clashxnode.github.io/uploads/2026/10/1-20261013.yaml
-- https://clashxnode.github.io/uploads/2026/10/2-20261013.yaml
-- https://clashxnode.github.io/uploads/2026/10/3-20261013.yaml
-- https://clashxnode.github.io/uploads/2026/10/4-20261013.yaml
+- https://clashxnode.github.io/uploads/2026/10/0-20261020.yaml
+- https://clashxnode.github.io/uploads/2026/10/1-20261020.yaml
+- https://clashxnode.github.io/uploads/2026/10/2-20261020.yaml
+- https://clashxnode.github.io/uploads/2026/10/3-20261020.yaml
+- https://clashxnode.github.io/uploads/2026/10/4-20261020.yaml
 
 ### 免费V2ray节点订阅链接
 
-- https://clashxnode.github.io/uploads/2026/10/0-20261013.txt
-- https://clashxnode.github.io/uploads/2026/10/1-20261013.txt
-- https://clashxnode.github.io/uploads/2026/10/2-20261013.txt
-- https://clashxnode.github.io/uploads/2026/10/3-20261013.txt
-- https://clashxnode.github.io/uploads/2026/10/4-20261013.txt
+- https://clashxnode.github.io/uploads/2026/10/0-20261020.txt
+- https://clashxnode.github.io/uploads/2026/10/1-20261020.txt
+- https://clashxnode.github.io/uploads/2026/10/2-20261020.txt
+- https://clashxnode.github.io/uploads/2026/10/3-20261020.txt
+- https://clashxnode.github.io/uploads/2026/10/4-20261020.txt
 
 ### 免费Sing-box节点订阅链接
 
-- https://clashxnode.github.io/uploads/2026/10/20261013.json
+- https://clashxnode.github.io/uploads/2026/10/20261020.json
 
 ## 更多Clash节点订阅 ：
 
